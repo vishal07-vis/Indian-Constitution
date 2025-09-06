@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Borrowed Features of the Indian Constitution — Study Guide</title>
+<style>
+  :root{
+    --bg:#f6f9fc; --card:#ffffff; --accent:#0b5ed7; --muted:#556070; --text:#0b2030;
+    --pill:#e8f3ff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.55;
+    padding:20px;
+  }
+  .wrap{max-width:1000px;margin:0 auto}
+  header{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+  h1{margin:0;color:var(--accent);font-size:22px}
+  p.lead{margin:0;color:var(--muted)}
+  .toolbar{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;width:100%}
+  .btn{
+    background:linear-gradient(180deg,#fff,#f0f6ff);border:1px solid rgba(11,94,215,0.12);
+    color:var(--accent);padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;
+  }
+  .search{flex:1;min-width:180px;padding:8px 10px;border-radius:8px;border:1px solid #dbeafc}
+  main{margin-top:18px;display:grid;grid-template-columns:1fr 330px;gap:18px}
+  @media(max-width:920px){ main{grid-template-columns:1fr} }
+  .content{display:flex;flex-direction:column;gap:14px}
+  .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid #e6f3ff;box-shadow:0 6px 18px rgba(11,78,150,0.03)}
+  h2{margin:0 0 8px;color:var(--accent);font-size:18px}
+  h3{margin:8px 0;color:#0b3f91}
+  .muted{color:var(--muted)}
+  .pill{background:var(--pill);padding:8px;border-radius:8px;margin-top:8px;color:var(--text)}
+  .summary-list{padding-left:18px;margin:8px 0}
+  aside .card{position:sticky;top:20px}
+  footer{text-align:center;color:var(--muted);margin-top:18px;font-size:13px}
+  pre{white-space:pre-wrap}
+  .highlight { outline: 3px solid rgba(11,94,215,0.12); }
+  @media print{
+    .toolbar, .btn, .search, aside{display:none}
+    body{padding:10mm}
+  }
+
+      /* Default (Dark Theme) */
+  body.default {
+    background-color: #0f172a;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Light Theme */
+  body.light {
+    background-color: #ffffff;
+    color: #1e293b;
+  }
+
+  /* Sepia Theme */
+  body.sepia {
+    background-color: #f4ecd8;
+    color: #5b4636;
+  }
+
+  /* High Contrast Theme */
+  body.contrast {
+    background-color: #000000;
+    color: #ffff00;
+    font-weight: bold;
+  }
+
+  /* Dropdown Styling */
+  .select {
+    margin: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📖 Borrowed Features of the Indian Constitution — Detailed Explanation</h1>
+    <p class="lead">A “Bag of Borrowings”: major features taken from world constitutions and adapted to Indian needs.</p>
+
+    <div class="toolbar" role="toolbar" aria-label="actions">
+      <button class="btn" id="copyAll">Copy All</button>
+      <button class="btn" id="downloadHtml">Download HTML</button>
+      <button class="btn" id="printBtn">Print / Save PDF</button>
+      <button class="btn" id="toggleBtn">Collapse Sections</button>
+       <select id="themeSelector" class="select">
+        <option value="default">🌙 Dark</option>
+        <option value="light">☀️ Light</option>
+        <option value="sepia">📖 Sepia</option>
+        <option value="contrast">🖥 High Contrast</option>
+      </select>
+      <input id="search" class="search" placeholder="Search (e.g., Ireland, DPSP, GoI Act) — press Enter" />
+      
+    </div>
+    
+  </header>
+
+  <main>
+    <section class="content" id="content">
+      <!-- Intro -->
+      <article class="card" id="intro">
+        <h2>Overview</h2>
+        <p>The Indian Constitution (1950) is the world's longest written constitution (currently <strong>465 Articles, 12 Schedules, 25 Parts</strong>).
+        It's called a <strong>“Bag of Borrowings”</strong> because the framers, led by Dr. B.R. Ambedkar, selected provisions from many constitutions and blended them with India’s conditions.</p>
+      </article>
+
+      <!-- 1. GoI Act 1935 -->
+      <article class="card" id="goi1935">
+        <h2>1️⃣ Government of India Act, 1935 (British Legacy)</h2>
+        <h3>Why it mattered</h3>
+        <p class="muted">The GoI Act, 1935 served as the immediate blueprint.</p>
+        <p><strong>Borrowed features:</strong></p>
+        <ul>
+          <li>Federal scheme — Union & State structure with division of powers (Union, State, Concurrent Lists).</li>
+          <li>Office of Governor — appointed by Centre in each State.</li>
+          <li>Judiciary — Federal Court (basis for Supreme Court) & High Courts.</li>
+          <li>Public Service Commissions — UPSC and State PSCs.</li>
+          <li>Emergency provisions — central override/suspension of provincial autonomy (basis for modern emergency rules).</li>
+          <li>Administrative details — day-to-day governance architecture.</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Provided the structural foundation for India's Constitution.</div>
+      </article>
+
+      <!-- 2. UK -->
+      <article class="card" id="uk">
+        <h2>2️⃣ British Constitution (UK)</h2>
+        <p class="muted">Parliamentary traditions, unwritten conventions and rule of law.</p>
+        <ul>
+          <li>Parliamentary system — Prime Minister as real executive; President/Governor as nominal head.</li>
+          <li>Rule of Law — law supreme; implemented through Articles such as Article 14 (equality before law).</li>
+          <li>Legislative procedure — methods to introduce and pass bills.</li>
+          <li>Single citizenship — no state citizenships, only Indian citizenship.</li>
+          <li>Cabinet system — collective responsibility of ministers to the legislature.</li>
+          <li>Bicameral legislature — Lok Sabha & Rajya Sabha.</li>
+          <li>Writ jurisdiction tradition — Habeas Corpus, Mandamus, Certiorari (given statutory basis via Articles 32 & 226).</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Ensured responsible government and parliamentary functioning in India.</div>
+      </article>
+
+      <!-- 3. USA -->
+      <article class="card" id="usa">
+        <h2>3️⃣ US Constitution (America)</h2>
+        <p class="muted">Provisions for rights and separation/checks on power.</p>
+        <ul>
+          <li>Fundamental Rights (modeled in Part III).</li>
+          <li>Independence of Judiciary and Judicial Review — power to strike down unconstitutional laws.</li>
+          <li>Impeachment mechanism for President.</li>
+          <li>Removal procedure for judges (inspired safeguards).</li>
+          <li>Vice-President role — Chairperson of Rajya Sabha mirrors some U.S. ideas.</li>
+          <li>Preamble concept — Justice, Liberty, Equality.</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Protected individual liberty and reinforced judicial supremacy.</div>
+      </article>
+
+      <!-- 4. Ireland -->
+      <article class="card" id="ireland">
+        <h2>4️⃣ Irish Constitution (Ireland)</h2>
+        <p class="muted">Welfare orientation and indirect presidential election.</p>
+        <ul>
+          <li>Directive Principles of State Policy (DPSPs) — social, economic & political guidelines for governance.</li>
+          <li>Indirect election of the President (inspired the method).</li>
+          <li>Nomination of certain members to Rajya Sabha by the President (12 nominated members).</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Introduced social & economic justice as a constitutional goal.</div>
+      </article>
+
+      <!-- 5. Canada -->
+      <article class="card" id="canada">
+        <h2>5️⃣ Canadian Constitution (Canada)</h2>
+        <p class="muted">Quasi-federal model with strong Centre.</p>
+        <ul>
+          <li>Federation with a strong Centre (unitary bias).</li>
+          <li>Appointment of Governors (provincial heads) by the Centre.</li>
+          <li>Residuary powers vested in Centre (unlike U.S.).</li>
+          <li>Advisory jurisdiction of Supreme Court — President/President-equivalent can seek SC opinion (concept adapted).</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Helped India evolve a strong-centre federalism suited to diversity.</div>
+      </article>
+
+      <!-- 6. Australia -->
+      <article class="card" id="australia">
+        <h2>6️⃣ Australian Constitution (Australia)</h2>
+        <p class="muted">Centre-State relations and economic unity.</p>
+        <ul>
+          <li>Concurrent List — shared subjects between Centre & States.</li>
+          <li>Freedom of trade, commerce & intercourse throughout the territory.</li>
+          <li>Joint sitting of both Houses to resolve legislative deadlocks.</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Promoted economic unity and gave mechanisms to resolve parliamentary stalemates.</div>
+      </article>
+
+      <!-- 7. USSR -->
+      <article class="card" id="ussr">
+        <h2>7️⃣ Soviet (USSR) Constitution</h2>
+        <p class="muted">Socialist ideas & duties.</p>
+        <ul>
+          <li>Fundamental Duties (Part IV-A) — later added by 42nd Amendment (1976).</li>
+          <li>Social, economic & political justice emphasized in the Preamble.</li>
+          <li>Planned-economy concepts — Planning Commission (later NITI Aayog).</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Balanced rights with citizens’ duties and introduced socialist planning ideas.</div>
+      </article>
+
+      <!-- 8. France -->
+      <article class="card" id="france">
+        <h2>8️⃣ French Constitution (France)</h2>
+        <p class="muted">Republican ideals from the French revolutionary tradition.</p>
+        <ul>
+          <li>Republican system with an elected Head of State.</li>
+          <li>Ideals of <em>Liberty, Equality, Fraternity</em> incorporated in the Preamble.</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Shaped India’s republican character and moral-philosophical goals.</div>
+      </article>
+
+      <!-- 9. Germany -->
+      <article class="card" id="germany">
+        <h2>9️⃣ German (Weimar) Constitution</h2>
+        <p class="muted">Emergency provisions.</p>
+        <ul>
+          <li>Suspension of certain Fundamental Rights in emergencies (Article 352 draws on such ideas).</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Formed part of the conceptual basis for India’s Emergency provisions (refined and constrained by later jurisprudence).</div>
+      </article>
+
+      <!-- 10. South Africa -->
+      <article class="card" id="southafrica">
+        <h2>🔟 South African Constitution (South Africa)</h2>
+        <p class="muted">Representation and amendment techniques.</p>
+        <ul>
+          <li>Procedure for constitutional amendments combining flexible & rigid elements.</li>
+          <li>Election of Rajya Sabha members by proportional representation using STV (adopted in practice).</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Helped craft balanced amendment procedures and representative membership systems.</div>
+      </article>
+
+      <!-- 11. Japan -->
+      <article class="card" id="japan">
+        <h2>1️⃣1️⃣ Japanese Constitution (Japan)</h2>
+        <p class="muted">Post-war parliamentary and rights procedures.</p>
+        <ul>
+          <li>Concept of “procedure established by law” influencing Article 21 (Right to life & liberty).</li>
+          <li>Parliamentary law-making method and detailed procedures.</li>
+        </ul>
+        <div class="pill"><strong>Impact:</strong> Influenced Right to Life jurisprudence (e.g., Maneka Gandhi).</div>
+      </article>
+
+      <!-- Importance -->
+      <article class="card" id="importance">
+        <h2>✅ Importance of Borrowed Features</h2>
+        <ul>
+          <li>Saved time — framers could adopt tested ideas rather than reinventing institutional designs.</li>
+          <li>Adapted to Indian conditions — diversity, multilingualism, social cleavages, security concerns.</li>
+          <li>Ensures balance — liberty, social justice, a strong Centre, and democratic procedures.</li>
+          <li>Resulted in a unique, composite Constitution drawing from global experience.</li>
+        </ul>
+      </article>
+
+      <!-- One-liner summary -->
+      <article class="card" id="one-liners">
+        <h2>📌 One-Liner Exam Summary</h2>
+        <ol class="summary-list">
+          <li><strong>UK:</strong> Parliamentary system, Cabinet, Rule of Law, Single Citizenship, Bicameralism.</li>
+          <li><strong>USA:</strong> Fundamental Rights, Judicial Review, Impeachment, VP office, Preamble ideas.</li>
+          <li><strong>Ireland:</strong> DPSPs, Presidential election method, Rajya Sabha nominations.</li>
+          <li><strong>Canada:</strong> Strong Centre, Governors, Residuary powers, SC advisory features.</li>
+          <li><strong>Australia:</strong> Concurrent List, Freedom of trade, Joint Sitting.</li>
+          <li><strong>USSR:</strong> Fundamental Duties, social justice orientation, planning model.</li>
+          <li><strong>France:</strong> Liberty, Equality, Fraternity; Republican character.</li>
+          <li><strong>Germany:</strong> Emergency suspension concept.</li>
+          <li><strong>South Africa:</strong> Amendment procedure, Rajya Sabha representation method (STV).</li>
+          <li><strong>Japan:</strong> Procedure established by law; parliamentary law-making.</li>
+          <li><strong>GoI Act 1935:</strong> Federal scheme, Governors, PSCs, Emergency provisions.</li>
+        </ol>
+
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn" id="copySummary">Copy One-Liners</button>
+          <button class="btn" id="downloadSummary">Download Summary (TXT)</button>
+        </div>
+      </article>
+    </section>
+
+    <aside>
+      <div class="card">
+        <h3>Quick Controls</h3>
+        <p class="muted">Use these to navigate & export.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">Top</button>
+          <button class="btn" onclick="document.getElementById('one-liners').scrollIntoView({behavior:'smooth'})">Summary</button>
+          <button class="btn" onclick="window.print()">Print</button>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid #eef6ff" />
+
+        <h4 style="margin:6px 0">Remember</h4>
+        <p class="muted">This page groups borrowed features country-wise — good for quick revision and memorization.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    © 2025 — Constitutional Studies · Study Aid (for educational use)
+  </footer>
+</div>
+
+<script>
+  // Copy all content to clipboard
+  document.getElementById('copyAll').addEventListener('click', async () => {
+    try {
+      const txt = document.getElementById('content').innerText;
+      await navigator.clipboard.writeText(txt);
+      alert('All content copied to clipboard.');
+    } catch (e) {
+      alert('Copy failed — your browser may restrict clipboard access.');
+    }
+  });
+
+  // Download page as .html
+  document.getElementById('downloadHtml').addEventListener('click', () => {
+    const doctype = '<!doctype html>\\n';
+    const html = document.documentElement.outerHTML;
+    const blob = new Blob([doctype + html], {type: 'text/html'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'borrowed-features-constitution.html';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+
+  // Print
+  document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+
+  // Toggle collapse/expand sections
+  let collapsed = false;
+  document.getElementById('toggleBtn').addEventListener('click', () => {
+    document.querySelectorAll('.content > .card').forEach(card => {
+      const title = card.querySelector('h2') ? card.querySelector('h2').innerText : '';
+      if (title === 'One-Liner Exam Summary' || title === 'Overview') return;
+      if (!collapsed) {
+        card.querySelectorAll('ul, p, .pill').forEach(n => n.style.display = 'none');
+      } else {
+        card.querySelectorAll('ul, p, .pill').forEach(n => n.style.display = '');
+      }
+    });
+    collapsed = !collapsed;
+    document.getElementById('toggleBtn').textContent = collapsed ? 'Expand Sections' : 'Collapse Sections';
+  });
+
+  // Search (press Enter)
+  document.getElementById('search').addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) return;
+    let found = false;
+    document.querySelectorAll('.content .card').forEach(card => {
+      const txt = card.innerText.toLowerCase();
+      const matched = txt.includes(q);
+      card.style.border = matched ? '2px solid rgba(11,94,215,0.25)' : '1px solid #e6f3ff';
+      if (matched && !found) { card.scrollIntoView({behavior:'smooth', block:'center'}); found = true; }
+    });
+    if (!found) alert('No matches found for: ' + q);
+  });
+
+  // Copy one-liners
+  document.getElementById('copySummary').addEventListener('click', async () => {
+    try {
+      const list = Array.from(document.querySelectorAll('#one-liners .summary-list li')).map(li => li.innerText).join('\\n');
+      await navigator.clipboard.writeText(list);
+      alert('One-liner summary copied.');
+    } catch (e) { alert('Copy failed'); }
+  });
+
+  // Download summary as TXT
+  document.getElementById('downloadSummary').addEventListener('click', () => {
+    const list = Array.from(document.querySelectorAll('#one-liners .summary-list li')).map(li => li.innerText).join('\\n');
+    const blob = new Blob([list], {type:'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'borrowed-features-summary.txt';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+
+
+    const themeSelector = document.getElementById("themeSelector");
+
+  // Load saved theme from localStorage (if any)
+  document.body.className = localStorage.getItem("theme") || "default";
+  themeSelector.value = document.body.className;
+
+  // Change theme on selection
+  themeSelector.addEventListener("change", (e) => {
+    const theme = e.target.value;
+    document.body.className = theme;
+    localStorage.setItem("theme", theme); // Save preference
+  });
+
+</script>
+</body>
+</html>

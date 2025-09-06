@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamental Duties of India</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .controls button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      font-size: 14px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      margin: 10px auto;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+    .card h2 {
+      cursor: pointer;
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .card p {
+      display: none;
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #444;
+    }
+    .show p {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fundamental Duties of Indian Citizens (Article 51A)</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="copyAll()">Copy All</button>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div id="duties"></div>
+
+  <script>
+    const duties = [
+      {
+        title: "1. Respect the Constitution, National Flag & Anthem",
+        text: "Every citizen must respect the Constitution as the supreme law of the land. The National Flag and Anthem represent the unity and sovereignty of India, so showing respect strengthens national identity. Disrespect is punishable under laws like the Prevention of Insults to National Honour Act, 1971. This duty reminds us to uphold the dignity of national symbols."
+      },
+      {
+        title: "2. Cherish and Follow Ideals of the Freedom Struggle",
+        text: "Citizens must remember the sacrifices of freedom fighters and uphold the values for which they fought – justice, equality, liberty, and fraternity. It inspires patriotism and ensures democratic principles remain alive. This duty also motivates us to contribute to nation-building with the same spirit."
+      },
+      {
+        title: "3. Uphold Sovereignty, Unity & Integrity of India",
+        text: "Every citizen is bound to protect the sovereignty (independence), unity, and territorial integrity of India. It emphasizes national integration beyond caste, religion, or regional differences. Activities like separatism, terrorism, or spreading hatred go against this duty."
+      },
+      {
+        title: "4. Defend the Country & Render National Service",
+        text: "Citizens have a duty to defend the nation in times of war or emergency. While military service is voluntary, in times of need, people should stand with armed forces and provide services. This duty fosters patriotism and readiness to protect national interests."
+      },
+      {
+        title: "5. Promote Harmony & Brotherhood Beyond Divisions",
+        text: "Every citizen should avoid discrimination based on religion, caste, language, or region. Instead, they must encourage fraternity and brotherhood among all Indians. This duty supports secularism and helps maintain unity in diversity, the essence of Indian culture."
+      },
+      {
+        title: "6. Preserve Rich Heritage of Culture",
+        text: "India has a vast cultural heritage – art, music, dance, monuments, traditions, and values. Citizens must preserve, protect, and promote this legacy for future generations. Protecting heritage sites, respecting traditions, and supporting cultural diversity are part of this duty."
+      },
+      {
+        title: "7. Protect the Natural Environment",
+        text: "This duty asks citizens to safeguard forests, rivers, lakes, wildlife, and the environment. It reflects India’s global commitment to sustainability and ecological balance. Small steps like reducing pollution, tree planting, and wildlife protection help fulfill this duty."
+      },
+      {
+        title: "8. Develop Scientific Temper, Humanism & Spirit of Inquiry",
+        text: "Citizens should adopt rational thinking, promote scientific outlook, and avoid superstitions or blind beliefs. Encouraging education, research, and innovation is part of this. At the same time, humanism means compassion, equality, and empathy towards others."
+      },
+      {
+        title: "9. Safeguard Public Property & Avoid Violence",
+        text: "Public property belongs to all citizens – buses, railways, schools, parks, etc. Vandalism, riots, or destruction of such property harms society itself. This duty guides people to use resources responsibly and avoid violence in protests or conflicts."
+      },
+      {
+        title: "10. Strive Towards Excellence in All Fields",
+        text: "Citizens must aim for excellence in education, profession, sports, technology, and all walks of life. Progress of individuals ultimately strengthens the nation. This duty encourages continuous self-improvement and collective national development."
+      },
+      {
+        title: "11. Duty of Parents to Provide Education (Added by 86th Amendment, 2002)",
+        text: "Parents or guardians must provide opportunities for education to children aged 6–14 years. This ensures that the Right to Education (Article 21A) is realized in practice. Educating children empowers families, reduces poverty, and strengthens democracy in the long run."
+      }
+    ];
+
+    const container = document.getElementById("duties");
+
+    duties.forEach(duty => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<h2 onclick="toggleCard(this)">${duty.title}</h2><p>${duty.text}</p>`;
+      container.appendChild(card);
+    });
+
+    function toggleCard(element) {
+      element.parentElement.classList.toggle("show");
+    }
+    function expandAll() {
+      document.querySelectorAll('.card').forEach(card => card.classList.add('show'));
+    }
+    function collapseAll() {
+      document.querySelectorAll('.card').forEach(card => card.classList.remove('show'));
+    }
+    function copyAll() {
+      let allText = '';
+      duties.forEach(d => allText += d.title + "\n" + d.text + "\n\n");
+      navigator.clipboard.writeText(allText);
+      alert("All duties copied to clipboard!");
+    }
+  </script>
+  <section style="max-width:900px;margin:30px auto;padding:10px 20px;">
+    <h2 style="color:#2c3e50;text-align:center;">Fundamental Duties (Article 51A)</h2>
+    <p style="text-align:center;color:#555;max-width:800px;margin:8px auto 18px;">Inserted by the 42nd Amendment (1976) and supplemented by the 86th Amendment (2002) — these are moral obligations of citizens (non-justiciable) to promote responsible citizenship.</p>
+
+    <div id="duties" style="display:grid;grid-template-columns:1fr;gap:12px;">
+      <!-- Duty cards will be injected by JS -->
+    </div>
+  </section>
+
+  <script>
+    // Duties data (4-5 lines each)
+    const duties = [
+      {title: '1. Respect the Constitution, National Flag & Anthem', text: `Every citizen must respect the Constitution as the supreme law and uphold its authority in public life. The National Flag and Anthem symbolise India's unity and sovereignty; showing respect reinforces national identity and civic dignity. Disrespect can attract penalties under laws like the Prevention of Insults to National Honour Act, 1971. This duty underlines the importance of national symbols in fostering social cohesion.`},
+
+      {title: '2. Cherish and Follow Ideals of the Freedom Struggle', text: `Citizens should remember and honour sacrifices made during the freedom movement and internalise the ideals of justice, liberty and equality for which freedom fighters struggled. This duty seeks to keep alive a sense of historical purpose and democratic values. It encourages civic responsibility and motivates citizens to contribute to nation building with the same zeal. It also fosters respect for constitutional ideals in everyday conduct.`},
+
+      {title: '3. Uphold Sovereignty, Unity & Integrity of India', text: `All citizens must protect India's sovereignty, territorial integrity and unity against threats like separatism, communalism or external aggression. The duty emphasises national integration beyond regional, religious or linguistic divides. It encourages responsible speech and action that reinforce national solidarity. Activities undermining unity—violent separatist movements or hate campaigns—contravene this duty.`},
+
+      {title: '4. Defend the Country & Render National Service', text: `Citizens are expected to be ready to defend the nation in times of war or emergency and to assist armed forces when needed. While military service remains voluntary, national service can include civil defence, relief work or community assistance during crises. This duty nurtures patriotism and collective preparedness. It underscores the idea that safeguarding the country is a shared responsibility.`},
+
+      {title: '5. Promote Harmony & Brotherhood Beyond Divisions', text: `This duty requires fostering fraternity and harmony among all persons irrespective of religion, caste, language or region. It seeks to reduce social tensions and discrimination, supporting the secular fabric of India. Citizens must actively promote mutual respect and peaceful coexistence. Encouraging inter-community dialogue and social inclusion fulfils this duty.`},
+
+      {title: '6. Preserve Rich Heritage of Culture', text: `India's cultural heritage—art, music, dance, monuments and traditions—must be preserved and promoted by every citizen. Protecting historic sites, supporting traditional arts, and valuing cultural diversity safeguard identity across generations. Preservation also involves responsible tourism and preventing vandalism. This duty links cultural continuity with national pride and education.`},
+
+      {title: '7. Protect the Natural Environment', text: `Citizens are obliged to protect forests, lakes, rivers, wildlife and biodiversity, and to maintain ecological balance. This duty highlights the importance of sustainable living, pollution control and conservation efforts. Actions such as tree-planting, waste reduction and respecting protected areas help fulfil it. It reflects the nation's commitment to environmental stewardship and future generations.`},
+
+      {title: '8. Develop Scientific Temper, Humanism & Spirit of Inquiry', text: `Citizens should cultivate rational thinking, a scientific outlook and a spirit of inquiry while rejecting superstition and blind faith. Promoting research, education, and objective analysis strengthens democratic decision-making. Humanism calls for compassion, dignity and respect for others, balancing critical thinking with empathy. Together, these values support progressive social reform and innovation.`},
+
+      {title: '9. Safeguard Public Property & Avoid Violence', text: `Public property—schools, transport, parks and civic infrastructure—belongs to the community and must be protected from damage or misuse. Citizens should avoid violent behaviour in protests and resolve disputes peacefully. Respecting public assets preserves services for everyone and is essential for civic order. This duty also discourages vandalism, hooliganism and destructive collective acts.`},
+
+      {title: '10. Strive Towards Excellence in All Fields', text: `Citizens should aim for excellence in education, profession, sports, arts and public life to build a stronger, proud nation. Continuous self-improvement increases national productivity and international standing. Striving for best practices, ethical conduct and innovation helps social progress. This duty links individual aspiration with collective national advancement.`},
+
+      {title: '11. Duty of Parents/Guardians to Provide Education (86th Amendment, 2002)', text: `Parents or guardians must provide opportunities for education to their children between 6–14 years, ensuring the Right to Education (Article 21A) is realized. This duty focuses on universalising elementary education and preventing child neglect. Proper education empowers children, lowers social inequality and enhances long-term development. It charges the family with a primary role in securing a child’s basic education.`}
+    ];
+
+    const dutiesContainer = document.getElementById('duties');
+
+    duties.forEach((d, idx) => {
+      const card = document.createElement('div');
+      card.style.background = '#fff';
+      card.style.padding = '14px';
+      card.style.borderRadius = '8px';
+      card.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
+
+      const t = document.createElement('div');
+      t.style.fontWeight = '700';
+      t.style.color = '#1f2937';
+      t.style.cursor = 'pointer';
+      t.textContent = d.title;
+
+      const p = document.createElement('div');
+      p.style.marginTop = '8px';
+      p.style.color = '#374151';
+      p.style.lineHeight = '1.5';
+      p.textContent = d.text;
+
+      // start collapsed
+      p.style.display = 'none';
+
+      t.addEventListener('click', () => {
+        p.style.display = p.style.display === 'none' ? 'block' : 'none';
+      });
+
+      card.appendChild(t);
+      card.appendChild(p);
+      dutiesContainer.appendChild(card);
+    });
+  </script>
+
+  <footer style="text-align:center;margin:30px 0;color:#666;">Updated: Fundamental Duties added — ready for print and export.</footer>
+</body>
+</html>

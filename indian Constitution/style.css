@@ -1,0 +1,279 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #f4f4f9;
+  color: #333;
+}
+
+/* Navbar */
+header {
+  background: #003366;
+  color: #fff;
+  padding: 15px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+nav h1 {
+  font-size: 24px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+  
+/* Home */
+.home{
+    max-width: 223px;
+    margin-top: -18px;
+    border-radius: 10px;
+}
+
+.card {
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .card button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .card button:hover {
+      background: #0056b3;
+    }
+    .details {
+      margin-top: 10px;
+      display: none; /* hidden by default */
+      text-align: left;
+      font-size: 14px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    
+/* Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+section img {
+  max-width: 400px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+form button {
+  background: #003366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0055cc;
+}
+
+  /* Wrapper for both forms */
+.forms-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px; /* space between forms */
+  margin: 40px auto;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+/* Common form styling */
+.forms-container section {
+  flex: 1;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.forms-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.forms-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.forms-container input,
+.forms-container textarea,
+.forms-container select {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.forms-container input:focus,
+.forms-container textarea:focus,
+.forms-container select:focus {
+  border-color: #3498db;
+}
+
+.forms-container button {
+  background: #3498db;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.forms-container button:hover {
+  background: #2980b9;
+}
+
+/* Responsive for small screens */
+@media (max-width: 850px) {
+  .forms-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .forms-container section {
+    width: 90%;
+  }
+}
+
+
+/* Footer */
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+
+
+
+/* Social media*/
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links a img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1); /* makes icons white */
+  transition: 0.3s;
+}
+
+.social-links a img:hover {
+  transform: scale(1.2);
+  filter: invert(64%) sepia(90%) saturate(500%) hue-rotate(180deg);
+}

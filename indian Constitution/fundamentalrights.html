@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamental Rights (Articles 12–35)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .controls button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #3498db;
+      color: white;
+    }
+    .article-card {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .article-title {
+      font-weight: bold;
+      cursor: pointer;
+      color: #2980b9;
+    }
+    .article-content {
+      display: none;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    
+  <h1>Fundamental Rights (Articles 12–35)</h1>
+  <img src="../new project/img/images.jpeg" alt="Constitution of India">
+  </div>
+
+  <div class="controls">
+    <button onclick="toggleAll(true)">Expand All</button>
+    <button onclick="toggleAll(false)">Collapse All</button>
+    <button onclick="copyAll()">Copy All</button>
+    <button onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <div id="articles"></div>
+
+  <script>
+    const articles = [
+      {title: "Article 12 – Definition of State", content: "Defines ‘State’ as Union & State governments, legislatures, local & other authorities. Fundamental Rights enforceable against State. \n Amendments: None directly, but SC widened scope (Ajay Hasia case)."},
+      {title: "Article 13 – Laws inconsistent with Fundamental Rights", content: "Any law violating Fundamental Rights is void. Judicial Review applies. \n Amendments: 24th (1971) – FRs amendable; 42nd (1976) – tried to exclude amendments (struck down); Kesavananda & Minerva Mills: Basic Structure Doctrine."},
+      {title: "Article 14 – Equality before Law", content: "Guarantees equality before law & equal protection of laws. \n No amendments; SC expanded through judgments."},
+      {title: "Article 15 – Prohibition of Discrimination", content: "Bans discrimination on religion, race, caste, sex, place of birth; allows affirmative action.\n Amendments: 93rd (2005) – reservations in private unaided institutions; 103rd (2019) – 10% EWS quota."},
+      {title: "Article 16 – Equality in Public Employment", content: "Equal job opportunity in State employment; permits reservation. \n Amendments: 77th (1995) – promotions; 81st (2000) – backlog quota; 85th (2001) – consequential seniority; 103rd (2019) – EWS quota."},
+      {title: "Article 17 – Abolition of Untouchability", content: "Untouchability abolished; punishable under law. Strengthened by Protection of Civil Rights Act, 1955 & SC/ST Act."},
+      {title: "Article 18 – Abolition of Titles", content: "Abolishes titles like Rai Bahadur; exceptions for academic & military distinctions."},
+      {title: "Article 19 – Six Freedoms", content: "Freedom of speech, assembly, association, movement, residence, profession. \n Amendments: 1st (1951) – reasonable restrictions; 44th (1978) – removed property right."},
+      {title: "Article 20 – Protection in Criminal Cases", content: "Safeguards against ex-post-facto laws, double jeopardy, self-incrimination."},
+      {title: "Article 21 – Right to Life & Liberty", content: "Protects life & personal liberty. Expanded judicially: includes dignity, privacy, environment (Maneka Gandhi, Puttaswamy)."},
+      {title: "Article 21A – Right to Education", content: "Free & compulsory education for children 6–14 yrs. \n Added by 86th Amendment (2002)."},
+      {title: "Article 22 – Protection in Arrest & Detention", content: "Rights in preventive detention & arrests. Preventive detention laws extended by Parliament (e.g., NSA)."},
+      {title: "Article 23 – Prohibition of Forced Labour", content: "Bans human trafficking, begar & forced labour. Supported by Bonded Labour laws."},
+      {title: "Article 24 – Prohibition of Child Labour", content: "No children under 14 in hazardous jobs. \n Strengthened by Child Labour Amendment Act, 2016."},
+      {title: "Article 25 – Freedom of Conscience & Religion", content: "Right to practice, profess & propagate religion. \n 42nd Amendment added ‘Secular’ to Preamble."},
+      {title: "Article 26 – Freedom to Manage Religious Affairs", content: "Religious denominations can manage their own institutions."},
+      {title: "Article 27 – Freedom from Religious Taxes", content: "No compulsion to pay taxes for promotion of any religion."},
+      {title: "Article 28 – Religious Instruction in Institutions", content: "No religious teaching in govt. funded institutions; exceptions for trusts."},
+      {title: "Article 29 – Protection of Culture & Language", content: "Right to preserve distinct language, script & culture."},
+      {title: "Article 30 – Minority Educational Institutions", content: "Minorities may establish & administer institutions. \n 93rd Amendment (2005) – reservations allowed in private unaided institutions."},
+      {title: "Article 32 – Right to Constitutional Remedies", content: "Right to move SC for FR enforcement (writs). \n 44th Amendment (1978): Arts. 20 & 21 can’t be suspended during Emergency."},
+      {title: "Article 33 – Restriction for Armed Forces", content: "Parliament may limit FRs for armed forces, police, etc."},
+      {title: "Article 34 – Martial Law Provisions", content: "Parliament can indemnify acts during martial law."},
+      {title: "Article 35 – Parliamentary Powers", content: "Only Parliament can make laws to enforce certain FRs."}
+    ];
+
+    const container = document.getElementById("articles");
+
+    articles.forEach(a => {
+      const card = document.createElement("div");
+      card.className = "article-card";
+
+      const title = document.createElement("div");
+      title.className = "article-title";
+      title.innerText = a.title;
+      title.onclick = () => {
+        content.style.display = content.style.display === "none" ? "block" : "none";
+      };
+
+      const content = document.createElement("div");
+      content.className = "article-content";
+      content.innerText = a.content;
+
+      card.appendChild(title);
+      card.appendChild(content);
+      container.appendChild(card);
+    });
+
+    function toggleAll(expand) {
+      document.querySelectorAll(".article-content").forEach(div => {
+        div.style.display = expand ? "block" : "none";
+      });
+    }
+
+    function copyAll() {
+      let text = "";
+      articles.forEach(a => {
+        text += a.title + "\n" + a.content + "\n\n";
+      });
+      navigator.clipboard.writeText(text).then(() => {
+        alert("All articles copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>

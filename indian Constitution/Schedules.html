@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Indian Constitution — Schedules (Interactive Guide)</title>
+  <style>
+    /* ------------------ CSS: Layout & Theming ------------------ */
+    :root {
+      --bg: #0f172a;           /* slate-900 */
+      --panel: #111827;        /* gray-900  */
+      --text: #e5e7eb;         /* gray-200  */
+      --muted: #9ca3af;        /* gray-400  */
+      --brand: #22d3ee;        /* cyan-400  */
+      --accent: #a78bfa;       /* violet-400 */
+      --ok: #10b981;           /* emerald-500 */
+      --warn: #f59e0b;         /* amber-500 */
+      --danger: #ef4444;       /* red-500 */
+      --card: #0b1220;
+      --border: #1f2937;       /* gray-800 */
+      --shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(34,211,238,.08), transparent 60%),
+                  radial-gradient(900px 600px at 120% 10%, rgba(167,139,250,.08), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(8px);
+      background: linear-gradient(to bottom, rgba(15,23,42,.85), rgba(15,23,42,.6));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; }
+
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 800; letter-spacing: .2px;
+    }
+    .brand .logo { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--accent)); box-shadow: var(--shadow); }
+
+    .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .search { position: relative; flex: 1 1 320px; }
+    .search input {
+      width: 100%; padding: 12px 42px 12px 12px; border-radius: 12px; border: 1px solid var(--border); background: var(--panel); color: var(--text);
+      outline: none; box-shadow: var(--shadow);
+    }
+    .search .icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); opacity: .7; }
+
+    .chip { border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 8px 12px; border-radius: 999px; cursor: pointer; user-select: none; }
+    .chip.active { outline: 2px solid var(--brand); }
+
+    main { display: grid; grid-template-columns: 280px 1fr; gap: 18px; max-width: 1200px; margin: 16px auto; padding: 0 20px 80px; }
+    nav {
+      position: sticky; top: 84px; align-self: start; max-height: calc(100dvh - 96px); overflow: auto; padding-right: 6px;
+    }
+    nav .toc { list-style: none; padding: 0; margin: 0; }
+    nav .toc a { display: block; padding: 10px 12px; border-radius: 10px; color: var(--muted); text-decoration: none; border: 1px solid transparent; }
+    nav .toc a:hover, nav .toc a.active { color: var(--text); border-color: var(--border); background: rgba(255,255,255,.03); }
+
+    section.card {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border: 1px solid var(--border); border-radius: 16px; padding: 16px; box-shadow: var(--shadow);
+    }
+
+    h1 { font-size: clamp(22px, 2.2vw, 32px); margin: 6px 0 8px; }
+    h2 { font-size: clamp(18px, 2vw, 26px); margin: 8px 0 8px; }
+    h3 { font-size: clamp(16px, 1.6vw, 22px); margin: 8px 0 6px; }
+    p, li { font-size: 15.5px; }
+
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px; }
+    .badge { font-size: 12px; border: 1px solid var(--border); border-radius: 999px; padding: 4px 8px; color: var(--muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+
+    .kpi {
+      border: 1px solid var(--border); border-radius: 14px; padding: 12px; background: var(--card);
+    }
+    .kpi strong { font-size: 22px; display: block; }
+
+    details.schedule { border: 1px solid var(--border); border-radius: 14px; padding: 12px; background: var(--panel); }
+    details.schedule + details.schedule { margin-top: 10px; }
+    details.schedule[open] { outline: 2px solid rgba(34,211,238,.25); }
+    summary { cursor: pointer; font-weight: 700; }
+
+    .pill { display:inline-block; padding: 3px 8px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; color: var(--muted); margin-left: 8px; }
+
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+    th { text-align: left; color: var(--muted); font-weight: 600; }
+
+    .tools { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+    .btn {
+      border: 1px solid var(--border); background: var(--panel); color: var(--text); padding: 10px 12px; border-radius: 10px; cursor: pointer;
+      transition: transform .08s ease; box-shadow: var(--shadow);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .note {
+      border-left: 4px solid var(--brand); background: rgba(34,211,238,.07); padding: 10px 12px; border-radius: 8px; font-size: 14px;
+    }
+
+    mark { background: rgba(34,211,238,.25); padding: 0 3px; border-radius: 4px; }
+
+    footer { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 16px; font-size: 13px; color: var(--muted); }
+
+    /* Responsive fallback: stack nav on small screens */
+    @media (max-width: 880px) {
+      main { grid-template-columns: 1fr; }
+      nav { position: static; max-height: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- -------------- Header -------------- -->
+  <header>
+    <div class="container" style="display:flex; justify-content: space-between; gap: 14px; align-items:center;">
+      <div class="brand" title="Indian Constitution – Schedules">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          
+          <div style="font-size: clamp(16px, 2vw, 22px);">Indian Constitution — Schedules</div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="search">
+          <input id="search" type="search" placeholder="Search schedules, topics, keywords… (e.g., 'anti-defection', 'Rajya Sabha')" />
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/></svg>
+        </div> <br>
+        <button class="chip" id="expandAll">Expand all</button>
+        <button class="chip" id="collapseAll">Collapse all</button>
+        <button class="chip" id="printBtn" title="Print or save as PDF">Print/PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- -------------- Body -------------- -->
+  <main>
+    <!-- Sidebar TOC -->
+    <nav>
+      <ul class="toc" id="toc"></ul>
+    </nav>
+
+    <!-- Content -->
+    <div id="content" style="display:flex; flex-direction: column; gap: 16px;">
+
+      <!-- Intro -->
+      <section id="what-are-schedules" class="card">
+        <h1>1. What are Schedules?</h1>
+        <div class="badges">
+          <span class="badge">Appendices to the Constitution</span>
+          <span class="badge">12 Schedules (as of today)</span>
+          <span class="badge">Exam-friendly</span>
+        </div>
+        <p><strong>Definition:</strong> Schedules are <em>appendices</em> to the Constitution that store detailed provisions, lists, formats and tabular data which support the main Articles. They make complex ideas easier to implement and revise without bloating the core text.</p>
+        <p><strong>Purpose:</strong> To organise technical details—like the distribution of powers, oaths, languages, tribal administration, local government functions, and anti‑defection rules—into a usable, update‑friendly structure.</p>
+        <div class="grid" style="margin-top:10px;">
+          <div class="kpi"><strong>12</strong> Total Schedules</div>
+          <div class="kpi"><strong>1950</strong> Year: 8 original Schedules</div>
+          <div class="kpi"><strong>Dynamic</strong> Can be amended by Parliament</div>
+        </div>
+      </section>
+
+      <!-- History -->
+      <section id="historical-context" class="card">
+        <h2>2. Historical Context</h2>
+        <p>The Constitution of India (1950) began with <strong>8 Schedules</strong>. Through amendments and reorganisation, this expanded to <strong>12</strong>. Major drivers included State reorganisation, language additions, grassroots governance (73rd/74th), land reform protection (1st Amendment), and party‑stability measures (52nd/91st Amendments).</p>
+        <div class="note"><strong>Exam Tip:</strong> Remember <em>“8 → 12”</em> and link key additions: 9th (1st Amendment), 10th (52nd), 11th (73rd), 12th (74th), language additions via 21st/71st/92nd Amendments.</div>
+      </section>
+
+      <!-- Schedules List (details accordions) -->
+      <section id="schedules" class="card">
+        <h2>3. Detailed Schedules</h2>
+        <p>Click to expand each Schedule for contents, purpose and important notes.</p>
+        <div id="schedulesWrap"></div>
+      </section>
+
+      <!-- Key Features -->
+      <section id="key-features" class="card">
+        <h2>4. Key Features of Schedules</h2>
+        <ul>
+          <li><strong>Supplementary:</strong> They implement and structure details linked to Articles.</li>
+          <li><strong>Amendable:</strong> Parliament can amend (procedure depends on subject). Some changes also require state ratification (e.g., affecting federal balance).</li>
+          <li><strong>Organised:</strong> Lists, tables and formats are placed outside the Articles for clarity and ease of updates.</li>
+          <li><strong>Equal force:</strong> Once enacted, Schedules have the same constitutional authority as the provisions they supplement.</li>
+        </ul>
+      </section>
+
+      <!-- Importance -->
+      <section id="importance" class="card">
+        <h2>5. Why Schedules Matter</h2>
+        <ul class="grid">
+          <li class="kpi"><strong>Federalism</strong> Union–State power sharing (7th Schedule)</li>
+          <li class="kpi"><strong>Inclusion</strong> Tribal protections (5th & 6th)</li>
+          <li class="kpi"><strong>Culture</strong> 22 languages safeguarded (8th)</li>
+          <li class="kpi"><strong>Stability</strong> Anti‑defection rules (10th)</li>
+          <li class="kpi"><strong>Grassroots</strong> Local self‑government (11th & 12th)</li>
+        </ul>
+      </section>
+
+      <!-- Amendments Table -->
+      <section id="amendments" class="card">
+        <h2>6. Amendments affecting Schedules (high‑yield)</h2>
+        <div class="tools">
+          <button class="btn" id="copyTable">Copy table</button>
+          <button class="btn" id="downloadCSV">Download CSV</button>
+        </div>
+        <div class="note" style="margin-bottom:10px;">This is a curated exam list. It is not exhaustive but covers the most frequently tested changes linking directly to Schedules.</div>
+        <div style="overflow:auto;">
+          <table id="amendTable" aria-label="Amendments affecting Schedules">
+            <thead>
+              <tr><th>Amendment</th><th>Year</th><th>What changed (Schedule‑link)</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- One‑line Summary -->
+      <section id="summary" class="card">
+        <h2>7. Summary</h2>
+        <p><strong>In one line:</strong> Schedules are constitutional appendices that package detailed lists, oaths, powers, languages, protections and local‑governance functions so the Constitution remains readable yet operational.</p>
+      </section>
+
+      <footer>
+        <div><strong>Disclaimer:</strong> Educational reference for competitive exams. Always cross‑verify with the latest bare‑act text and authoritative sources.</div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    // ------------------ JS: Data ------------------
+    // Accurate, exam‑oriented blurbs for each Schedule
+    const schedules = [
+      {
+        id: 1,
+        title: "1st Schedule — States, Union Territories & their territories",
+        bullets: [
+          "Lists the names and territorial extent of all States and Union Territories.",
+          "Updated when States/UTs are formed, merged, renamed or reorganised.",
+          "Examples: State Reorganisation (1956), creation of new States (e.g., Chhattisgarh 2000, Jharkhand 2000, Uttarakhand 2000, Telangana 2014), and the Jammu & Kashmir Reorganisation (2019)."
+        ],
+        exam: ["Boundaries/renaming questions", "Which Schedule lists States & UTs?"]
+      },
+      {
+        id: 2,
+        title: "2nd Schedule — Emoluments & entitlements (constitutional offices)",
+        bullets: [
+          "Contains provisions regarding salaries, allowances and entitlements of: (A) President & Governors; (C) Speakers/Chairmen & their Deputies (Parliament & State Legislatures); (D) Judges of Supreme Court/High Courts; (E) Comptroller & Auditor‑General of India.",
+          "Part B (Rulers of Indian States) was repealed.",
+          "Note: MPs/MLAs pay & allowances are governed separately by law (Articles 106 & 195), not by the 2nd Schedule itself."
+        ],
+        exam: ["Parts A, C, D, E mapping", "What is NOT covered here? (MPs)"]
+      },
+      {
+        id: 3,
+        title: "3rd Schedule — Forms of Oaths & Affirmations",
+        bullets: [
+          "Prescribed oaths for Union/State Ministers, MPs/MLAs/MLCs, Judges of SC/HC, the CAG, and for the President/Vice‑President, etc.",
+          "Ensures allegiance to the Constitution and faithful discharge of duties."
+        ],
+        exam: ["Identify which offices take oath under 3rd Schedule"]
+      },
+      {
+        id: 4,
+        title: "4th Schedule — Allocation of seats in the Council of States (Rajya Sabha)",
+        bullets: [
+          "Specifies how many Rajya Sabha seats are allocated to each State and Union Territory.",
+          "Revised when States/UTs are reorganised or new ones are created."
+        ],
+        exam: ["Rajya Sabha seat distribution comes from which Schedule?"]
+      },
+      {
+        id: 5,
+        title: "5th Schedule — Administration & control of Scheduled Areas & Scheduled Tribes (non‑NE)",
+        bullets: [
+          "Covers Scheduled Areas in several States (outside the 6th‑Schedule NE States).",
+          "Provides for Tribal Advisory Councils, Governor’s special responsibilities, and regulation of land transfers & forest/resource rights.",
+          "<em>PESA, 1996</em> operationalises panchayats in Scheduled Areas building on the 73rd Amendment."
+        ],
+        exam: ["Difference between 5th & 6th Schedule", "Role of Governor/Tribal Advisory Council"]
+      },
+      {
+        id: 6,
+        title: "6th Schedule — Autonomous District Councils in NE (Assam, Meghalaya, Tripura, Mizoram)",
+        bullets: [
+          "Creates Autonomous District/Regional Councils with legislative, administrative and limited judicial powers for tribal self‑governance.",
+          "Covers subjects like land, forest, customs, social justice within council areas; has taxation powers and courts of village councils."
+        ],
+        exam: ["Which States?", "Autonomous District vs Regional Council"]
+      },
+      {
+        id: 7,
+        title: "7th Schedule — Distribution of legislative subjects",
+        bullets: [
+          "Three lists: Union List, State List, Concurrent List.",
+          "Examples: Union — defence, foreign affairs, banking; State — police, public health, agriculture; Concurrent — education, marriage & divorce, electricity.",
+          "Residuary subjects rest with the Union (Parliament).",
+          "Subjects have been shifted between lists (notably by the 42nd Amendment)."
+        ],
+        exam: ["Residuary power with whom?", "Examples per list"]
+      },
+      {
+        id: 8,
+        title: "8th Schedule — Recognised languages (22)",
+        bullets: [
+          "Lists 22 languages recognised for constitutional purposes and development.",
+          "Timeline: 14 at commencement; +Sindhi (21st, 1967); +Konkani/Manipuri/Nepali (71st, 1992); +Bodo/Dogri/Maithili/Santhali (92nd, 2003).",
+          "Current list: Assamese, Bengali, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Malayalam, Manipuri, Marathi, Nepali, Odia, Punjabi, Sanskrit, Sindhi, Tamil, Telugu, Urdu, Bodo, Dogri, Maithili, Santhali."
+        ],
+        exam: ["How it reached 22", "Odia (not ‘Oriya’), Dogri present?", "English is NOT in 8th Schedule"]
+      },
+      {
+        id: 9,
+        title: "9th Schedule — Certain laws protected from challenge (subject to basic‑structure test)",
+        bullets: [
+          "Inserted by the 1st Amendment (1951) mainly to protect agrarian/land‑reform laws from being struck down for violating Fundamental Rights.",
+          "After <em>I.R. Coelho (2007)</em>, laws placed in the 9th Schedule <em>after</em> 24 April 1973 (Kesavananda Bharati) can be reviewed and struck down if they violate the basic structure."
+        ],
+        exam: ["Purpose of 9th Schedule", "Coelho case principle"]
+      },
+      {
+        id: 10,
+        title: "10th Schedule — Anti‑defection law",
+        bullets: [
+          "Added by the 52nd Amendment (1985) to curb political defections by disqualifying legislators for voluntarily giving up party membership or defying whips on specified votes.",
+          "91st Amendment (2003) tightened provisions; also capped size of Council of Ministers (15% of House) and barred defectors from being appointed as ministers while disqualified."
+        ],
+        exam: ["Grounds of disqualification", "Role of Speaker/Chairman", "Effect of 91st Amendment"]
+      },
+      {
+        id: 11,
+        title: "11th Schedule — Panchayats (29 subjects)",
+        bullets: [
+          "Inserted by the 73rd Amendment (1992) to specify functions of Panchayats: agriculture, minor irrigation, roads, rural housing, drinking water, poverty alleviation, health & sanitation, education (including primary & adult), social welfare, etc.",
+          "Strengthens democratic decentralisation in rural areas."
+        ],
+        exam: ["Number of subjects? (29)"]
+      },
+      {
+        id: 12,
+        title: "12th Schedule — Municipalities (18 functions)",
+        bullets: [
+          "Inserted by the 74th Amendment (1992) for urban local bodies: urban planning, regulation of land use, roads & bridges, water supply, public health & sanitation, fire services, urban forestry, slum improvement & upgradation, etc.",
+          "Empowers urban self‑government."
+        ],
+        exam: ["Number of functions? (18)"]
+      }
+    ];
+
+    const amendments = [
+      { no: "1st", year: 1951, what: "Created the 9th Schedule to protect land‑reform and similar laws from FR challenges (subject to later basic‑structure review)." },
+      { no: "7th", year: 1956, what: "State Reorganisation — major updates to the 1st Schedule (States/UTs) and adjustments to the 7th Schedule lists." },
+      { no: "21st", year: 1967, what: "Added Sindhi to the 8th Schedule (languages)." },
+      { no: "36th", year: 1975, what: "Made Sikkim a State (1st Schedule changes; Rajya Sabha allocation in 4th Schedule)." },
+      { no: "42nd", year: 1976, what: "Shifted subjects among Union/State/Concurrent Lists (7th Schedule) — e.g., education towards Concurrent; broad federal balance tweaks." },
+      { no: "44th", year: 1978, what: "Post‑Emergency corrections; some consequential updates touching entitlements but no new Schedule added." },
+      { no: "52nd", year: 1985, what: "Inserted 10th Schedule (Anti‑defection)." },
+      { no: "61st", year: 1989, what: "Voting age 21→18 (not a Schedule change directly; high‑yield exam fact often paired with 73rd/74th)." },
+      { no: "69th", year: 1991, what: "Created the National Capital Territory of Delhi; 1st & 4th Schedules updated (name/status; RS seats)." },
+      { no: "71st", year: 1992, what: "Added Konkani, Manipuri, Nepali to the 8th Schedule (languages)." },
+      { no: "73rd", year: 1992, what: "Inserted 11th Schedule (Panchayats)." },
+      { no: "74th", year: 1992, what: "Inserted 12th Schedule (Municipalities)." },
+      { no: "86th", year: 2002, what: "Education as a Fundamental Right (Art. 21A) with list implications already largely Concurrent; exam‑link to 7th Schedule topics." },
+      { no: "92nd", year: 2003, what: "Added Bodo, Dogri, Maithili, Santhali to the 8th Schedule (raising total to 22)." },
+      { no: "96th", year: 2011, what: "Changed the name ‘Oriya’ to ‘Odia’ (8th Schedule)." },
+      { no: "101st", year: 2016, what: "GST reforms — impacted taxation entries across lists in the 7th Schedule." },
+      { no: "J&K Reorganisation", year: 2019, what: "By Act of Parliament: reorganised the erstwhile State into UT of J&K and UT of Ladakh (1st & 4th Schedule updates)." },
+      { no: "104th", year: 2020, what: "Extended SC/ST reservation in Lok Sabha/State Assemblies to 2030; discontinued Anglo‑Indian reserved seats (not a Schedule insertion)." }
+    ];
+
+    // ------------------ JS: Render ------------------
+    const tocEl = document.getElementById('toc');
+    const sections = [
+      { id: 'what-are-schedules', label: 'What are Schedules?' },
+      { id: 'historical-context', label: 'Historical Context' },
+      { id: 'schedules', label: 'Detailed Schedules' },
+      { id: 'key-features', label: 'Key Features' },
+      { id: 'importance', label: 'Importance' },
+      { id: 'amendments', label: 'Amendments' },
+      { id: 'summary', label: 'Summary' }
+    ];
+
+    sections.forEach(s => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${s.id}`; a.textContent = s.label;
+      li.appendChild(a); tocEl.appendChild(li);
+    });
+
+    function renderSchedules() {
+      const wrap = document.getElementById('schedulesWrap');
+      wrap.innerHTML = '';
+      schedules.forEach(s => {
+        const details = document.createElement('details');
+        details.className = 'schedule';
+        details.id = `schedule-${s.id}`;
+        const summary = document.createElement('summary');
+        summary.innerHTML = `${s.title} <span class="pill">Exam</span>`;
+        details.appendChild(summary);
+        const ul = document.createElement('ul');
+        s.bullets.forEach(b => { const li = document.createElement('li'); li.innerHTML = b; ul.appendChild(li); });
+        details.appendChild(ul);
+        if (s.exam?.length) {
+          const ex = document.createElement('p');
+          ex.style.color = 'var(--muted)';
+          ex.style.fontSize = '14px';
+          ex.innerHTML = `<strong>Quick‑revise:</strong> ${s.exam.join(' • ')}`;
+          details.appendChild(ex);
+        }
+        wrap.appendChild(details);
+      });
+    }
+
+    function renderAmendments() {
+      const tbody = document.querySelector('#amendTable tbody');
+      tbody.innerHTML = '';
+      amendments.forEach(a => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td><strong>${a.no}</strong></td><td>${a.year}</td><td>${a.what}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    renderSchedules();
+    renderAmendments();
+
+    // ------------------ JS: Interactions ------------------
+    // Active link highlight on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const link = tocEl.querySelector(`a[href="#${id}"]`);
+        if (entry.isIntersecting) {
+          tocEl.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+          link?.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+
+    sections.forEach(s => observer.observe(document.getElementById(s.id)));
+
+    // Search with highlight
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      // reset highlights
+      document.querySelectorAll('mark').forEach(m => {
+        const parent = m.parentNode; parent.replaceChild(document.createTextNode(m.textContent), m); parent.normalize();
+      });
+      if (!q) return;
+      const walker = document.createTreeWalker(document.getElementById('content'), NodeFilter.SHOW_TEXT, null);
+      let node; const terms = q.split(/\s+/).filter(Boolean);
+      while ((node = walker.nextNode())) {
+        const t = node.nodeValue;
+        let replaced = false; let html = t;
+        terms.forEach(term => {
+          const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
+          if (re.test(html)) { replaced = true; html = html.replace(re, '<mark>$1</mark>'); }
+        });
+        if (replaced) {
+          const span = document.createElement('span'); span.innerHTML = html; node.parentNode.replaceChild(span, node);
+        }
+      }
+    });
+
+    // Expand/Collapse all
+    document.getElementById('expandAll').addEventListener('click', () => {
+      document.querySelectorAll('details.schedule').forEach(d => d.open = true);
+    });
+    document.getElementById('collapseAll').addEventListener('click', () => {
+      document.querySelectorAll('details.schedule').forEach(d => d.open = false);
+    });
+
+    // Print button
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // Copy table
+    document.getElementById('copyTable').addEventListener('click', async () => {
+      const rows = [["Amendment","Year","Change"]].concat(
+        amendments.map(a => [a.no, a.year, a.what])
+      );
+      const tsv = rows.map(r => r.map(c => String(c).replace(/\t/g,' ')).join('\t')).join('\n');
+      try {
+        await navigator.clipboard.writeText(tsv);
+        flash("Amendments table copied (TSV). Paste into Excel/Docs.", 'ok');
+      } catch(e) {
+        flash("Copy failed. Select and copy manually.", 'warn');
+      }
+    });
+
+    // Download CSV
+    document.getElementById('downloadCSV').addEventListener('click', () => {
+      const rows = [["Amendment","Year","Change"], ...amendments.map(a => [a.no, a.year, a.what])];
+      const csv = rows.map(r => r.map(cell => '"' + String(cell).replace(/"/g,'""') + '"').join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'amendments_schedules.csv'; a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Little toast feedback
+    function flash(msg, tone='ok'){
+      const div = document.createElement('div');
+      div.textContent = msg;
+      div.style.position='fixed'; div.style.bottom='18px'; div.style.left='50%'; div.style.transform='translateX(-50%)';
+      div.style.padding='10px 14px'; div.style.borderRadius='10px'; div.style.boxShadow='var(--shadow)';
+      div.style.border='1px solid var(--border)'; div.style.background='var(--panel)';
+      div.style.color= tone==='ok'? 'var(--text)' : (tone==='warn'? 'var(--warn)' : 'var(--danger)');
+      document.body.appendChild(div); setTimeout(()=> div.remove(), 2400);
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emergency Provisions (Articles 352–360) — Revision Guide</title>
+  <style>
+    :root{
+      --bg: #0f172a;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #22c1c3;
+      --glass: rgba(255,255,255,0.03);
+      --paper: #f8fafc;
+      --text-dark: #0b1220;
+    }
+    /* Light/dark mode utility */
+    html[data-theme='light']{ --bg: #f6f9fb; --card: #ffffff; --muted: #475569; --accent: #0ea5a4; --glass: rgba(11,17,32,0.03); --paper: #ffffff; --text-dark: #071025 }
+
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; min-height:100vh; background:linear-gradient(180deg,var(--bg), #071027 95%); color: #e6eef6; padding:24px}
+    .container{max-width:980px;margin:0 auto}
+
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:20px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+    .btn{background:var(--card);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:inherit;cursor:pointer}
+    .btn.ghost{background:transparent}
+    .search{flex:1;display:flex;gap:8px}
+    .search input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+
+    main{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+
+    /* Article list */
+    .article{border-radius:10px;padding:12px;margin-bottom:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);cursor:pointer}
+    .article h3{margin:0;font-size:16px}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    .content{margin-top:10px;color:var(--muted);display:none;line-height:1.5}
+    .article.open .content{display:block;color:var(--paper);}
+
+    table{width:100%;border-collapse:collapse;margin-top:10px;color:var(--muted)}
+    th,td{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left}
+    th{color:var(--accent)}
+
+    aside{position:sticky;top:24px}
+    .toc{list-style:none;padding-left:0;margin:0}
+    .toc li{margin-bottom:8px}
+    .toc a{color:var(--muted);text-decoration:none}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* print friendly */
+    @media print{
+      body{background:white;color:black}
+      .toolbar, aside{display:none}
+      main{grid-template-columns:1fr}
+      .card{box-shadow:none;background:white}
+    }
+
+    /* responsive */
+    @media (max-width:880px){main{grid-template-columns:1fr} aside{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">EP</div>
+      <div>
+        <h1>Emergency Provisions (Articles 352–360)</h1>
+        <p class="lead">Part XVIII — Compact revision guide with expandable articles, table and quick exam tips.</p>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="search btn">
+        <input id="q" placeholder="Search within the guide (e.g., Article 356)" />
+        <button class="btn" id="searchBtn">Search</button>
+      </div>
+      <button class="btn" id="expandAll">Expand all</button>
+      <button class="btn" id="collapseAll">Collapse all</button>
+      <button class="btn" id="toggleTheme">Toggle theme</button>
+      <button class="btn" id="printBtn">Print / Save as PDF</button>
+    </div>
+
+    <main>
+      <section>
+        <div class="card" id="contentCard">
+
+          <!-- Article 352 -->
+          <article class="article" data-title="Article 352 – National Emergency">
+            <h3>Article 352 – National Emergency</h3>
+            <div class="meta">Grounds: War, External Aggression, Armed Rebellion (44th Amendment).</div>
+            <div class="content">
+              <p><strong>Process:</strong> President proclaims on written advice of Union Cabinet. Approval required within <strong>1 month</strong> by Parliament. Duration: <strong>6 months</strong> at a time (extendable).</p>
+              <p><strong>Effects:</strong> Centre gains power to legislate on State List; Article 19 suspended automatically; other FRs can be restricted (Art. 359 orders) except Art. 20 & 21; tenure of legislatures can be extended by 1 year at a time while Emergency lasts + 6 months after it ends.</p>
+              <p><em>Usage:</em> Declared in 1962, 1971, 1975.</p>
+            </div>
+          </article>
+
+          <!-- Article 353 -->
+          <article class="article" data-title="Article 353 – Effect of Proclamation of Emergency">
+            <h3>Article 353 – Effect of Proclamation of Emergency</h3>
+            <div class="meta">Union executive and Parliament powers extend during National Emergency.</div>
+            <div class="content">
+              <p>While a National Emergency is in force, the <strong>executive power of the Union</strong> extends to giving directions to any State. Parliament gains power to legislate on <strong>State List subjects</strong>.</p>
+            </div>
+          </article>
+
+          <!-- Article 354 -->
+          <article class="article" data-title="Article 354 – Revenue Distribution">
+            <h3>Article 354 – Application of provisions relating to distribution of revenues</h3>
+            <div class="meta">President can modify Centre–State financial relations in Emergency.</div>
+            <div class="content">
+              <p>During National Emergency the President may make changes to how revenues are distributed between the Centre and States, temporarily overriding normal Finance Commission recommendations.</p>
+            </div>
+          </article>
+
+          <!-- Article 355 -->
+          <article class="article" data-title="Article 355 – Duty of the Union to protect States">
+            <h3>Article 355 – Duty of the Union to protect States</h3>
+            <div class="meta">Union's duty to protect States & ensure constitutional governance.</div>
+            <div class="content">
+              <p>The Union has a constitutional duty to protect states against external aggression and internal disturbance and to ensure that state governance conforms to the Constitution. This article underpins the use of Article 356 in practice.</p>
+            </div>
+          </article>
+
+          <!-- Article 356 -->
+          <article class="article" data-title="Article 356 – State Emergency / President's Rule">
+            <h3>Article 356 – State Emergency / President’s Rule</h3>
+            <div class="meta">Failure of constitutional machinery in a State; Governor's report or President's satisfaction.</div>
+            <div class="content">
+              <p><strong>Process:</strong> President issues proclamation; must be approved by Parliament within <strong>2 months</strong>; valid for <strong>6 months</strong> and extendable (subject to limits: max 3 years with conditions beyond 1 year).</p>
+              <p><strong>Effects:</strong> President assumes State functions; Assembly may be dissolved or suspended; Parliament legislates for State; expenditures charged to Consolidated Fund of State may be authorized by President.</p>
+              <p><strong>Controversy:</strong> Article 356 has been widely criticised for misuse – it has been invoked over 100 times in independent India.</p>
+            </div>
+          </article>
+
+          <!-- Article 357 -->
+          <article class="article" data-title="Article 357 – Legislative Powers under 356">
+            <h3>Article 357 – Exercise of legislative powers under Proclamation issued under Article 356</h3>
+            <div class="meta">Parliament/President may legislate for the State when President's Rule is in force.</div>
+            <div class="content">
+              <p>During President's Rule, Parliament can delegate legislative power to the President or to the Governor of the State to make laws for the State. Laws made during President's Rule continue to remain valid even after normalcy is restored unless altered.</p>
+            </div>
+          </article>
+
+          <!-- Article 358 -->
+          <article class="article" data-title="Article 358 – Suspension of Art. 19">
+            <h3>Article 358 – Suspension of provisions of Article 19 during Emergency</h3>
+            <div class="meta">Article 19 suspended during National Emergency (war/external aggression).</div>
+            <div class="content">
+              <p>When a National Emergency is proclaimed on grounds of war or external aggression, the rights under Article 19 (freedom of speech, movement, etc.) are automatically suspended for the duration of the Emergency. Following the 44th Amendment, Article 19 is not suspended if Emergency is declared solely on ground of "armed rebellion".</p>
+            </div>
+          </article>
+
+          <!-- Article 359 -->
+          <article class="article" data-title="Article 359 – Suspension of enforcement of FRs">
+            <h3>Article 359 – Suspension of enforcement of Fundamental Rights during Emergency</h3>
+            <div class="meta">President may suspend right to move courts for enforcement of certain FRs (except Arts. 20 & 21).</div>
+            <div class="content">
+              <p>The President may pass an order under Article 359 suspending the right to move any court for enforcement of certain Fundamental Rights (except Articles 20 and 21) while Emergency is in force. This allows Parliament to enact laws which would otherwise infringe these rights.</p>
+            </div>
+          </article>
+
+          <!-- Article 360 -->
+          <article class="article" data-title="Article 360 – Financial Emergency">
+            <h3>Article 360 – Financial Emergency</h3>
+            <div class="meta">Declared when financial stability or credit of India is threatened.</div>
+            <div class="content">
+              <p><strong>Process:</strong> President proclaims Financial Emergency; must be approved by Parliament within <strong>2 months</strong>. No fixed maximum duration — continues until revoked.</p>
+              <p><strong>Effects:</strong> President can direct States on financial measures; can reduce salaries of government employees including judges; may require Presidential assent for State Money Bills. <em>Note: No Financial Emergency has been declared in India so far.</em></p>
+            </div>
+          </article>
+
+          <!-- Summary Table -->
+          <div style="margin-top:12px">
+            <h3>Summary Table</h3>
+            <table>
+              <thead>
+                <tr><th>Article</th><th>Subject</th><th>Key Points</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>352</td><td>National Emergency</td><td>War, external aggression, armed rebellion; affects Centre–State relations & FRs.</td></tr>
+                <tr><td>353</td><td>Effect of National Emergency</td><td>Centre’s power extends to States; Parliament can legislate on State List.</td></tr>
+                <tr><td>354</td><td>Revenue distribution</td><td>President can alter Centre–State financial relations.</td></tr>
+                <tr><td>355</td><td>Duty of Union</td><td>Protect States from aggression/internal disturbance; ensure constitutional governance.</td></tr>
+                <tr><td>356</td><td>State Emergency (President’s Rule)</td><td>Failure of Constitutional machinery in State; President assumes powers.</td></tr>
+                <tr><td>357</td><td>Legislative powers during Art. 356</td><td>Parliament/President/Governor can legislate for State.</td></tr>
+                <tr><td>358</td><td>Suspension of Art. 19</td><td>Auto-suspended during Emergency (except for "armed rebellion").</td></tr>
+                <tr><td>359</td><td>Suspension of enforcement of FRs</td><td>Courts cannot be approached for FRs (except Arts. 20 & 21).</td></tr>
+                <tr><td>360</td><td>Financial Emergency</td><td>Threat to financial stability; salary cuts, Centre control on State finances.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h4>Contents / Quick links</h4>
+          <ul class="toc" id="toc">
+            <li><a href="#" data-link="Article 352 – National Emergency">Article 352 – National Emergency</a></li>
+            <li><a href="#" data-link="Article 353 – Effect of Proclamation of Emergency">Article 353 – Effect</a></li>
+            <li><a href="#" data-link="Article 354 – Revenue Distribution">Article 354 – Revenue</a></li>
+            <li><a href="#" data-link="Article 355 – Duty of the Union to protect States">Article 355 – Duty of Union</a></li>
+            <li><a href="#" data-link="Article 356 – State Emergency / President's Rule">Article 356 – President's Rule</a></li>
+            <li><a href="#" data-link="Article 357 – Legislative Powers under 356">Article 357 – Legislative Powers</a></li>
+            <li><a href="#" data-link="Article 358 – Suspension of Art. 19">Article 358 – Suspension of Art.19</a></li>
+            <li><a href="#" data-link="Article 359 – Suspension of enforcement of FRs">Article 359 – Suspension of FRs</a></li>
+            <li><a href="#" data-link="Article 360 – Financial Emergency">Article 360 – Financial Emergency</a></li>
+          </ul>
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0" />
+          <div>
+            <strong>Exam tips</strong>
+            <ul style="color:var(--muted);padding-left:18px">
+              <li>Remember: National Emergency used 3 times; Financial Emergency never.</li>
+              <li>44th Amendment (1978) – "internal disturbance" → "armed rebellion"; Art.20 & 21 protected.</li>
+              <li>Article 356 — most misused; quote cases like <em>S.R. Bommai v. Union of India</em> when making a legal argument (for advanced study).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Quick actions</h4>
+          <button class="btn" id="downloadHtml">Download HTML</button>
+          <button class="btn" id="copyMd">Copy as Markdown</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="card" style="margin-top:12px;padding:12px;color:var(--muted)">
+        <strong>Ready-made revision page.</strong> Use the search, expand/collapse and print features for quick revision. Want a printable one-page PDF? Use the Print button (or press Ctrl+P).
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Basic interactivity: expand/collapse, search, theme toggle, download
+    const articles = Array.from(document.querySelectorAll('.article'));
+    const q = document.getElementById('q');
+    const searchBtn = document.getElementById('searchBtn');
+    const expandAll = document.getElementById('expandAll');
+    const collapseAll = document.getElementById('collapseAll');
+    const toggleTheme = document.getElementById('toggleTheme');
+    const printBtn = document.getElementById('printBtn');
+
+    // Toggle each article on click
+    articles.forEach(a => {
+      a.addEventListener('click', (e) => {
+        // prevent toggle when clicking links inside
+        if (e.target.tagName.toLowerCase() === 'a') return;
+        a.classList.toggle('open');
+      })
+    });
+
+    expandAll.addEventListener('click', ()=> articles.forEach(a=>a.classList.add('open')));
+    collapseAll.addEventListener('click', ()=> articles.forEach(a=>a.classList.remove('open')));
+
+    searchBtn.addEventListener('click', doSearch);
+    q.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') doSearch(); });
+
+    function doSearch(){
+      const term = q.value.trim().toLowerCase();
+      if(!term){ articles.forEach(a=>a.style.display='block'); return }
+      articles.forEach(a=>{
+        const txt = (a.dataset.title + ' ' + a.innerText).toLowerCase();
+        if(txt.includes(term)){
+          a.style.display='block';
+          a.classList.add('open');
+        } else {
+          a.style.display='none';
+        }
+      })
+    }
+
+    // Table of contents links
+    document.querySelectorAll('#toc a').forEach(link=>{
+      link.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const target = e.currentTarget.dataset.link.toLowerCase();
+        const found = articles.find(a => a.dataset.title.toLowerCase().startsWith(target));
+        if(found){ found.scrollIntoView({behavior:'smooth', block:'center'}); found.classList.add('open'); }
+      })
+    });
+
+    // Theme toggle
+    const htmlEl = document.documentElement;
+    toggleTheme.addEventListener('click', ()=>{
+      if(htmlEl.getAttribute('data-theme') === 'light') htmlEl.removeAttribute('data-theme');
+      else htmlEl.setAttribute('data-theme','light');
+    });
+
+    printBtn.addEventListener('click', ()=> window.print());
+
+    // Download HTML: create blob and link
+    document.getElementById('downloadHtml').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Emergency_Provisions_Articles_352-360.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Copy as markdown (simple conversion)
+    document.getElementById('copyMd').addEventListener('click', async ()=>{
+      let md = '# Emergency Provisions (Articles 352–360)\n\n';
+      articles.forEach(a => {
+        const title = a.querySelector('h3').innerText;
+        const body = a.querySelector('.content').innerText.trim();
+        md += '## ' + title + '\n\n' + body + '\n\n';
+      });
+      try{
+        await navigator.clipboard.writeText(md);
+        alert('Copied as Markdown — paste into your notes');
+      }catch(e){ alert('Unable to copy automatically. The Markdown has been prepared in a new window.'); const w = window.open(); w.document.write('<pre>'+md.replace(/</g,'&lt;') +'</pre>'); }
+    });
+
+    // Small UX: highlight search term in open articles (simple)
+    function highlight(term){
+      document.querySelectorAll('.article .content').forEach(c=>{
+        let html = c.innerText;
+        if(!term) { c.innerHTML = html; return }
+        const re = new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')', 'ig');
+        c.innerHTML = html.replace(re, '<mark style="background:var(--accent);color:#001014;padding:0.1em;border-radius:3px">$1</mark>');
+      })
+    }
+    q.addEventListener('input', ()=> highlight(q.value.trim()));
+
+  </script>
+</body>
+</html>

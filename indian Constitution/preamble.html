@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Preamble — Indian Constitution (Interactive)</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1724; --muted:#94a3b8; --text:#e6eef8; --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071026 0%,#07121a 60%);color:var(--text);}
+    header{padding:28px 20px 10px;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .wrap{max-width:980px;margin:22px auto;padding:0 18px}
+    h1{font-size:22px;margin:0 0 6px}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .btn{background:var(--card);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer}
+    .btn.alt{background:transparent;border:1px solid rgba(96,165,250,0.16);}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:16px;border-radius:12px;margin-bottom:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .pre-text{font-family:Georgia, 'Times New Roman', serif; font-size:18px; line-height:1.45; white-space:pre-wrap;}
+
+    h2{margin:6px 0 8px;font-size:16px;color:var(--accent)}
+    .section p{margin:8px 0;color:#dbeafe}
+    .kw{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+
+    details summary{cursor:pointer;outline:none;padding:8px 0;font-weight:700;color:var(--accent)}
+    details .content{padding:8px 0 0}
+
+    footer{color:var(--muted);text-align:center;padding:22px 0}
+
+    @media (max-width:640px){.wrap{padding:0 12px} .pre-text{font-size:16px}}
+
+    /* print friendly */
+    @media print{
+      body{background:white;color:black}
+      .card{box-shadow:none;border:none;background:transparent}
+      .toolbar, header, footer{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Preamble — The Constitution of India</h1>
+      <p class="lead">Interactive page with line-by-line breakdown, history, keywords, objectives, amendments and judicial views. Use the buttons below to copy, download or print.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <button class="btn" id="copyBtn">Copy Preamble Text</button>
+      <button class="btn" id="downloadBtn">Download HTML</button>
+      <button class="btn" id="printBtn">Print / Save PDF</button>
+      <button class="btn alt" id="toggleAll">Toggle All Sections</button>
+    </div>
+
+    <section class="card">
+      <div class="pre-text" id="preambleText">WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a [SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC] and to secure to all its citizens:
+
+JUSTICE, social, economic and political;
+
+LIBERTY of thought, expression, belief, faith and worship;
+
+EQUALITY of status and of opportunity and to promote among them all;
+
+FRATERNITY assuring the dignity of the individual and the "[unity and integrity of the Nation];
+
+IN OUR CONSTITUENT ASSEMBLY this twenty-sixth day of November, 1949 do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.</div>
+    </section>
+
+    <section class="card section">
+      <h2>1. Meaning of the Preamble</h2>
+      <details open>
+        <summary>Read</summary>
+        <div class="content">
+          <p>The Preamble is the introductory statement of the Constitution. It lays down the philosophy, ideals, and objectives of the Indian Constitution.</p>
+          <p>It reflects the will of the people since it begins with “We, the People of India”, showing that the Constitution derives its authority from the people, not from any external power or monarch.</p>
+          <p>The Preamble is often described as the "Identity Card" of the Constitution and the "Philosophy in a nutshell".</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section">
+      <h2>2. Historical Background</h2>
+      <details>
+        <summary>Read</summary>
+        <div class="content">
+          <p>The idea of a Preamble came from the American Constitution, which also starts with "We, the People".</p>
+          <p>The Objectives Resolution drafted by Jawaharlal Nehru and adopted by the Constituent Assembly in 1947 served as the basis of the Indian Preamble.</p>
+          <p>It was finally enacted on 26th November 1949 and came into effect on 26th January 1950 (Republic Day).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section">
+      <h2>3. Keywords of the Preamble</h2>
+      <details>
+        <summary>Read keywords</summary>
+        <div class="content">
+          <p>The Preamble declares India to be:</p>
+          <div class="kw">
+            <span class="chip">Sovereign</span>
+            <span class="chip">Socialist (42nd Amendment, 1976)</span>
+            <span class="chip">Secular (42nd Amendment, 1976)</span>
+            <span class="chip">Democratic</span>
+            <span class="chip">Republic</span>
+          </div>
+          <p style="margin-top:12px">Short notes:</p>
+          <p><strong>Sovereign:</strong> India is fully independent and free from external control. Both external and internal sovereignty are ensured.</p>
+          <p><strong>Socialist:</strong> Implies reducing inequalities in income, status, and wealth; ensures welfare policies for citizens. (Democratic socialism, not communism.)</p>
+          <p><strong>Secular:</strong> India has no state religion; all religions are treated equally by the State; guarantees freedom of religion (Articles 25–28).</p>
+          <p><strong>Democratic & Republic:</strong> Government elected by the people; Head of State is elected, not hereditary; ensures political equality and end of monarchy.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section">
+      <h2>4. Objectives of the Constitution</h2>
+      <details>
+        <summary>Read objectives</summary>
+        <div class="content">
+          <p>The Preamble promises to secure for all citizens:</p>
+          <p><strong>Justice</strong> (social, economic and political): Social justice removes social inequalities; economic justice aims at fair distribution of wealth; political justice ensures equal political rights and universal adult suffrage.</p>
+          <p><strong>Liberty</strong>: Liberty of thought, expression, belief, faith and worship — ensuring dignity of individuals and freedom of conscience.</p>
+          <p><strong>Equality</strong>: Equality of status and opportunity, preventing discrimination (Article 14 guarantees equality before law).</p>
+          <p><strong>Fraternity</strong>: Spirit of brotherhood assuring dignity of the individual and the unity & integrity of the nation ("integrity" added by 42nd Amendment).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section">
+      <h2>5. Amendments to the Preamble</h2>
+      <details>
+        <summary>Read amendments</summary>
+        <div class="content">
+          <p>The 42nd Constitutional Amendment Act, 1976 made three changes to the Preamble:</p>
+          <ol>
+            <li>Added the word <strong>"Socialist"</strong>.</li>
+            <li>Added the word <strong>"Secular"</strong>.</li>
+            <li>Changed "unity of the nation" to <strong>"unity and integrity of the nation"</strong>.</li>
+          </ol>
+          <p>This is the only amendment ever made to the Preamble.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section">
+      <h2>6. Judicial View on the Preamble</h2>
+      <details>
+        <summary>Read judicial view</summary>
+        <div class="content">
+          <p><strong>Berubari Union Case (1960):</strong> Initially the Supreme Court held the Preamble was not part of the Constitution.</p>
+          <p><strong>Kesavananda Bharati Case (1973):</strong> The Supreme Court overruled Berubari and held that the Preamble is part of the Constitution; however, amendments cannot destroy the basic structure doctrine.</p>
+          <p><strong>LIC of India Case (1995):</strong> Reaffirmed that the Preamble is an integral part of the Constitution and useful in constitutional interpretation.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section">
+      <h2>7. Significance of the Preamble</h2>
+      <details>
+        <summary>Read significance</summary>
+        <div class="content">
+          <p>Acts as a guide to the Constitution; serves as the philosophy and soul of the Constitution; helps in interpreting ambiguous provisions; and reflects the vision of the founding fathers.</p>
+          <p>The Preamble is frequently used by courts as an aid in constitutional interpretation and to understand the intent behind provisions.</p>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <small>Created for study & revision • Click <em>Download</em> to save this page as a single HTML file which you can keep or print.</small>
+    </footer>
+  </main>
+
+  <script>
+    // Copy Preamble text
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const txt = document.getElementById('preambleText').innerText;
+      try{
+        await navigator.clipboard.writeText(txt);
+        alert('Preamble copied to clipboard');
+      }catch(e){
+        alert('Copy failed — your browser may block clipboard access');
+      }
+    });
+
+    // Download the current HTML as file
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const doctype = '<!DOCTYPE html>';
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([doctype + html], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'preamble-india.html';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Print
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+
+    // Toggle details open/close
+    let toggled = true;
+    document.getElementById('toggleAll').addEventListener('click', ()=>{
+      document.querySelectorAll('details').forEach(d=> d.open = !toggled);
+      toggled = !toggled;
+      document.getElementById('toggleAll').textContent = toggled ? 'Collapse All' : 'Expand All';
+    });
+  </script>
+</body>
+</html>

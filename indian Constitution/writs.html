@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Writs in the Indian Constitution — Guide</title>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --card: #f7f9fc;
+      --accent: #0b5ed7;
+      --muted: #4b5563;
+      --text: #0f172a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+      padding:24px;
+    }
+    .wrap{max-width:980px;margin:0 auto}
+    header{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+    h1{margin:0;color:var(--accent);font-size:22px}
+    p.lead{margin:0;color:var(--muted)}
+    .toolbar{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .btn{
+      padding:8px 12px;border-radius:8px;border:1px solid rgba(11,94,215,0.12);
+      background:linear-gradient(180deg,#ffffff,#f0f6ff);
+      color:var(--accent);cursor:pointer;font-weight:600;
+    }
+    .btn.ghost{background:transparent;border:1px solid #e6eef8;color:var(--text)}
+    .search{flex:1;min-width:180px;padding:8px 10px;border-radius:8px;border:1px solid #dbe7fb}
+    article.card{background:var(--card);padding:16px;border-radius:12px;margin-top:14px;border:1px solid #e6eef8}
+    article.card h2{margin:0 0 8px;color:var(--accent);font-size:18px}
+    article.card h3{margin:8px 0 6px;color:#0b3f91}
+    .case{background:#fff;padding:10px;border-left:4px solid #0b5ed7;border-radius:6px;margin:10px 0;color:var(--muted)}
+    .muted{color:var(--muted)}
+    ul{padding-left:20px;margin:6px 0}
+    pre{white-space:pre-wrap;background:transparent;padding:0;margin:0;color:var(--text)}
+    footer{margin-top:22px;color:var(--muted);text-align:center;font-size:13px}
+    @media (max-width:700px){
+      .toolbar{flex-direction:column;align-items:stretch}
+    }
+    @media print{
+      .toolbar, header .toolbar, .btn { display:none !important }
+      body{padding:8mm}
+      article.card{border:none;box-shadow:none;background:transparent}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Writs in the Indian Constitution</h1>
+      <p class="lead">Meaning, types, articles, case laws, amendments and importance — ready for revision.</p>
+
+      <div class="toolbar" role="toolbar" aria-label="actions">
+        <button class="btn" id="copyBtn">Copy All</button>
+        <button class="btn" id="downloadBtn">Download HTML</button>
+        <button class="btn" id="printBtn">Print / Save PDF</button>
+        <button class="btn" id="toggleBtn">Collapse Sections</button>
+        <input id="search" class="search" placeholder="Search (e.g., Habeas Corpus, Maneka Gandhi)" aria-label="Search content">
+      </div>
+    </header>
+
+    <article class="card" id="meaning">
+      <h2>1. Meaning</h2>
+      <p><strong>A Writ</strong> is a formal written order issued by the <strong>Supreme Court (Article 32)</strong> or <strong>High Courts (Article 226)</strong>. They are used to enforce Fundamental Rights and check misuse of power. Origin: Borrowed from the British legal system (Rule of Law).</p>
+      <p class="muted"><strong>Key difference:</strong> SC (Art.32) issues writs primarily for enforcement of Fundamental Rights; HCs (Art.226) can issue writs for Fundamental Rights and for other legal or administrative purposes.</p>
+    </article>
+
+    <article class="card" id="types">
+      <h2>2. Types of Writs (Five)</h2>
+
+      <section id="habeas">
+        <h3>(A) Habeas Corpus — “to have the body”</h3>
+        <p>Purpose: Protects personal liberty against illegal detention or arrest. The court directs the detaining authority to produce the detained person before it and justify the detention. If detention is found unlawful, the person must be released immediately.</p>
+        <p class="muted">Can be filed by the detainee or anyone on their behalf. Not applicable if detention is lawful, by a competent court, or during an emergency where rights may be suspended (Art.359).</p>
+        <div class="case"><strong>Case Laws:</strong><br>ADM Jabalpur v. Shivkant Shukla (1976) — controversial decision during Emergency; <br>Maneka Gandhi v. Union of India (1978) — reinforced the protection of personal liberty (Art.21).</div>
+      </section>
+
+      <section id="mandamus">
+        <h3>(B) Mandamus — “We Command”</h3>
+        <p>Purpose: Orders a public official, corporation, tribunal or lower court to perform a public or statutory duty they have failed to perform. It ensures authorities do not neglect or refuse to carry out their legal duties.</p>
+        <p class="muted">Not issuable against the President, Governors, judges of higher courts, or private individuals where no public duty exists.</p>
+        <div class="case"><strong>Case Law:</strong><br>Gujarat State Financial Corporation v. Lotus Hotels (1983) — Mandamus used to compel performance of statutory duty.</div>
+      </section>
+
+      <section id="prohibition">
+        <h3>(C) Prohibition</h3>
+        <p>Purpose: Issued by a higher court to a lower court or tribunal to stop proceedings that are outside its jurisdiction or beyond its legal authority. It is preventive — it halts illegal trials before they proceed further.</p>
+        <div class="case"><strong>Case Law:</strong><br>East India Commercial Co. v. Collector of Customs (1962) — Prohibition issued where authority exceeded jurisdiction.</div>
+      </section>
+
+      <section id="certiorari">
+        <h3>(D) Certiorari — “To be certified”</h3>
+        <p>Purpose: Issued by a higher court to transfer a case from a lower court/quasi-judicial body or to quash its order when it exceeds jurisdiction or acts illegally. It can be preventive and curative.</p>
+        <div class="case"><strong>Case Laws:</strong><br>A.K. Gopalan v. State of Madras (1950) — early detention jurisprudence; <br>State of U.P. v. Mohammad Nooh (1958) — illegal orders quashed.</div>
+      </section>
+
+      <section id="quo">
+        <h3>(E) Quo Warranto — “By what authority”</h3>
+        <p>Purpose: Questions the legality of a person’s claim to a public office. If the holder is not entitled to the office, the writ can oust them and restore the rightful holder.</p>
+        <p class="muted">Conditions: Office must be a public office created by law and the claimant's right must be ascertainable in law.</p>
+        <div class="case"><strong>Case Law:</strong><br>University of Mysore v. Govinda Rao (1963) — Quo Warranto used to challenge an illegal appointment.</div>
+      </section>
+    </article>
+
+    <article class="card" id="articles">
+      <h2>3. Articles Related</h2>
+      <p><strong>Article 32</strong> — Empowers the Supreme Court to issue writs for enforcement of Fundamental Rights; called the “heart and soul” of the Constitution by Dr. B.R. Ambedkar.</p>
+      <p><strong>Article 226</strong> — Empowers High Courts to issue writs for enforcement of Fundamental Rights and for any other purpose (wider practical scope for non-FR matters).</p>
+    </article>
+
+    <article class="card" id="amendments">
+      <h2>4. Amendments & Evolution</h2>
+      <p>No constitutional amendment abolished writs. The <strong>42nd Amendment (1976)</strong> attempted to curb judicial powers during Emergency; subsequent developments (including the <strong>44th Amendment, 1978</strong>) and judicial review corrected these curbs.</p>
+      <p class="muted">Writ jurisdiction forms part of the Constitution’s <strong>basic structure</strong> as confirmed by the Kesavananda Bharati judgment (1973) and subsequent cases.</p>
+    </article>
+
+    <article class="card" id="importance">
+      <h2>5. Importance</h2>
+      <ul>
+        <li>Primary legal tool to protect Fundamental Rights and personal liberty.</li>
+        <li>Serves as an essential check on arbitrary administrative and executive action.</li>
+        <li>Ensures the supremacy of the Constitution and the rule of law.</li>
+      </ul>
+    </article>
+
+    <article class="card" id="one-liner">
+      <h2>Exam One-liner</h2>
+      <p>Writs (Art.32 &amp; 226) are judicial orders — <strong>Habeas Corpus</strong> (liberty), <strong>Mandamus</strong> (perform duty), <strong>Prohibition</strong> (stop excess), <strong>Certiorari</strong> (quash/transfer), <strong>Quo Warranto</strong> (check authority) — vital to protect democracy & the rule of law.</p>
+    </article>
+
+    <footer>
+      <small class="muted">Tip: Use the search box to highlight sections. Click Download to save this page as an HTML file for offline study.</small>
+    </footer>
+  </div>
+
+  <script>
+    // Copy all content text
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        const text = document.querySelector('.wrap').innerText;
+        await navigator.clipboard.writeText(text);
+        alert('All content copied to clipboard');
+      } catch (e) {
+        alert('Copy failed — your browser may restrict clipboard access');
+      }
+    });
+
+    // Download page as single HTML file
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      const doctype = '<!doctype html>\\n';
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([doctype + html], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'writs-guide.html';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Print
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // Toggle sections (collapse/expand)
+    let collapsed = false;
+    document.getElementById('toggleBtn').addEventListener('click', () => {
+      const cards = document.querySelectorAll('article.card, article.card section');
+      if (!collapsed) {
+        // collapse inner sections (hide the section contents but keep headings visible)
+        document.querySelectorAll('#types section > p, #types section .case').forEach(e => e.style.display = 'none');
+        document.getElementById('toggleBtn').textContent = 'Expand Sections';
+      } else {
+        document.querySelectorAll('#types section > p, #types section .case').forEach(e => e.style.display = '');
+        document.getElementById('toggleBtn').textContent = 'Collapse Sections';
+      }
+      collapsed = !collapsed;
+    });
+
+    // Simple search: highlight matching cards by border
+    document.getElementById('search').addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) return;
+      document.querySelectorAll('article.card').forEach(card => {
+        const matched = card.innerText.toLowerCase().includes(q);
+        card.style.border = matched ? '2px solid #0b5ed7' : '1px solid #e6eef8';
+        if (matched) card.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+    });
+  </script>
+</body>
+</html>

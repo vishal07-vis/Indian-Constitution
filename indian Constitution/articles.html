@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Constitution – All 25 Parts (Articles Explained)</title>
+  <style>
+    :root{
+      --bg:#0f172a;--card:#0b1220;--ink:#e5e7eb;--muted:#94a3b8;--brand:#22d3ee;--accent:#60a5fa;
+      --ok:#22c55e;--warn:#f59e0b;--danger:#ef4444;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--ink)}
+    header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(15,23,42,.95),rgba(15,23,42,.85));backdrop-filter:blur(6px);border-bottom:1px solid rgba(148,163,184,.2)}
+    .wrap{max-width:1200px;margin:0 auto;padding:18px}
+    h1{font-size:clamp(22px,2.4vw,34px);margin:0 0 8px}
+    .sub{color:var(--muted);font-size:14px}
+    /* Default (Dark Theme) */
+  body.default {
+    background-color: #0f172a;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Light Theme */
+  body.light {
+    background-color: #ffffff;
+    color: #1e293b;
+  }
+
+  /* Sepia Theme */
+  body.sepia {
+    background-color: #f4ecd8;
+    color: #5b4636;
+  }
+
+  /* High Contrast Theme */
+  body.contrast {
+    background-color: #000000;
+    color: #ffff00;
+    font-weight: bold;
+  }
+
+  /* Dropdown Styling */
+  .select {
+    margin: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+    input[type="text"],select{background:var(--card);color:var(--ink);border:1px solid rgba(148,163,184,.25);border-radius:10px;padding:10px 12px;outline:none}
+    input[type="text"]{flex:1;min-width:220px}
+    select{min-width:180px}
+    button{background:var(--accent);color:white;border:none;border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer}
+    button.ghost{background:transparent;color:var(--ink);border:1px solid rgba(148,163,184,.25)}
+    button.ok{background:var(--ok)}
+
+    main{max-width:1200px;margin:20px auto;padding:0 18px}
+    .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+
+    .card{background:var(--card);border:1px solid rgba(148,163,184,.2);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card summary{list-style:none}
+    .card summary::-webkit-details-marker{display:none}
+    .card header{position:relative;background:linear-gradient(90deg,rgba(96,165,250,.1),rgba(34,211,238,.1));padding:14px;border-bottom:1px solid rgba(148,163,184,.2)}
+    .title{font-weight:800;font-size:18px;color:#e2e8f0}
+    .meta{color:var(--muted);font-size:12px;margin-top:4px}
+
+    .content{padding:14px}
+    .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.25);color:#bfdbfe;padding:6px 10px;border-radius:999px;font-size:12px;margin:4px 6px 0 0}
+    .article{border-left:3px solid rgba(96,165,250,.4);padding-left:10px;margin:12px 0}
+    .article h4{margin:0 0 6px;font-size:15px}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;background:rgba(34,197,94,.18);border:1px solid rgba(34,197,94,.35);color:#bbf7d0;padding:2px 8px;border-radius:8px;font-size:11px;margin-left:8px}
+    .warning{background:rgba(245,158,11,.16);border-color:rgba(245,158,11,.35);color:#fde68a}
+    .danger{background:rgba(239,68,68,.16);border-color:rgba(239,68,68,.35);color:#fecaca}
+    .note{background:rgba(34,211,238,.12);border:1px dashed rgba(34,211,238,.35);padding:10px;border-radius:12px;margin:10px 0}
+
+    .footer{max-width:1200px;margin:40px auto 80px;padding:0 18px;color:var(--muted);font-size:12px}
+    .hide{display:none!important}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Indian Constitution – All 25 Parts (Articles Explained)</h1>
+      <div class="sub">Searchable, part-wise explanations with key amendments, procedures & landmark notes – in one lightweight file.</div>
+      <div class="toolbar">
+        <input id="q" type="text" placeholder="Search: e.g., 'Article 21 privacy', 'Finance Commission', 'Emergency'" />
+        <select id="partFilter"></select>
+        <button id="expandAll" class="ghost">Expand all</button>
+        <button id="collapseAll" class="ghost">Collapse all</button>
+        <select id="themeSelector" class="select">
+          <option value="default">🌙 Dark</option>
+          <option value="light">☀️ Light</option>
+          <option value="sepia">📖 Sepia</option>
+          <option value="contrast">🖥 High Contrast</option>
+        </select>
+        <button id="printBtn" class="ok">Print / Save as PDF</button>
+        <button id="downloadBtn">Download HTML</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="cards" class="grid"></div>
+  </main>
+
+  <section class="footer">
+    <p><strong>Note.</strong> Part VII is repealed; the Constitution currently has 25 operative parts. Articles are presented with crisp, exam-focused explanations; key amendments and landmark principles are highlighted inline.</p>
+  </section>
+
+  <!-- DATA: Parts & Articles (curated, exam-grade explanations) -->
+  <script>
+  const DATA = [
+    {
+      partNo: 'Part I', range: 'Articles 1–4', title: 'The Union and its Territory',
+      overview: 'Defines the name “India, that is Bharat”, and empowers Parliament to admit, establish, alter, or rename States/UTs without a formal constitutional amendment.',
+      tags: ['Union','States','Territory','Reorganisation','1st Schedule'],
+      articles: [
+        {no: 'Art. 1', head: 'Name and territory of the Union', detail: 'India (Bharat) is a Union of States; territories listed in the First Schedule. The term “Union” signals an indestructible Union of destructible States.'},
+        {no: 'Art. 2', head: 'Admission/establishment of new States', detail: 'Parliament may admit or establish new States on terms it deems fit (e.g., Sikkim, 1975).'},
+        {no: 'Art. 3', head: 'Formation/alteration of States', detail: 'Parliament can form new States; alter areas, boundaries, and names after President refers the Bill to the concerned State legislature for views (non-binding).'},
+        {no: 'Art. 4', head: 'Incidental provisions', detail: 'Laws under Arts. 2–3 may amend Schedules 1 & 4 and are NOT deemed constitutional amendments under Art. 368.'},
+      ]
+    },
+    {
+      partNo: 'Part II', range: 'Articles 5–11', title: 'Citizenship',
+      overview: 'Provides initial citizenship framework at commencement and gives Parliament power to regulate citizenship by law (Citizenship Act, 1955, with later amendments).',
+      tags: ['Citizenship','Domicile','Migration','PIO'],
+      articles: [
+        {no: 'Art. 5', head: 'Citizenship at commencement', detail: 'Persons domiciled in India at commencement are citizens if born in India, or a parent was born in India, or 5 years residence.'},
+        {no: 'Art. 6', head: 'Migrants from Pakistan', detail: 'Citizenship for certain migrants before 19 July 1948; others subject to permit/resettlement rules.'},
+        {no: 'Art. 7', head: 'Migrants to Pakistan', detail: 'Those who migrated after 1 March 1947 generally not citizens; exceptions via resettlement permits.'},
+        {no: 'Art. 8', head: 'PIO abroad', detail: 'Persons of Indian origin residing outside India may be citizens by registration at Indian consulates.'},
+        {no: 'Art. 9', head: 'Foreign citizenship', detail: 'Voluntary acquisition of a foreign citizenship ends Indian citizenship.'},
+        {no: 'Art. 10', head: 'Continuance of citizenship', detail: 'Existing citizens continue subject to Parliament’s law.'},
+        {no: 'Art. 11', head: 'Parliament’s power', detail: 'Parliament regulates citizenship by law (Citizenship Act, 1955).'},
+      ]
+    },
+    {
+      partNo: 'Part III', range: 'Articles 12–35', title: 'Fundamental Rights',
+      overview: 'Six groups of justiciable rights: Equality, Freedoms, Protection in criminal laws, Life & Liberty, Freedom of Religion, Cultural & Educational Rights, and Right to Constitutional Remedies (Art. 32).',
+      tags: ['FRs','Equality','Speech','Life','Religion','Minorities','Writs'],
+      articles: [
+        {no: 'Art. 12', head: 'Definition of “State”', detail: 'Includes Govt., Parliament/Legislatures, local/other authorities under Govt. control; FRs mainly enforceable against “State”.'},
+        {no: 'Art. 13', head: 'Laws inconsistent with FRs void', detail: 'Introduces judicial review. Post-24th Am., constitutional amendments are “law” only for limited tests; Basic Structure remains inviolable (Kesavananda).'},
+        {no: 'Art. 14', head: 'Equality before law', detail: 'Equality before law + equal protection of laws; allows reasonable classification with intelligible differentia & rational nexus.'},
+        {no: 'Art. 15', head: 'No discrimination', detail: 'State shall not discriminate by religion, race, caste, sex, place of birth; allows special provisions for women/children/SEBC/SC/ST; EWS quota via 103rd Am.'},
+        {no: 'Art. 16', head: 'Public employment', detail: 'Equality of opportunity in public jobs; reservation for backward classes/SC/ST; promotions for SC/ST via 77th, 85th Ams.; EWS via 103rd.'},
+        {no: 'Art. 17', head: 'Abolition of untouchability', detail: 'Practice prohibited and punishable; reinforced by PCR Act, 1955 and SC/ST (PoA) Act, 1989.'},
+        {no: 'Art. 18', head: 'Abolition of titles', detail: 'No titles except military/academic distinctions; civil honours (Padma awards) are decorations, not titles.'},
+        {no: 'Art. 19', head: 'Six freedoms', detail: 'Speech & expression (incl. press), assembly, association, movement, residence, profession—subject to reasonable restrictions; 44th Am. removed property right.'},
+        {no: 'Art. 20', head: 'Criminal protections', detail: 'No ex post facto penalties; no double jeopardy; no self-incrimination.'},
+        {no: 'Art. 21', head: 'Life & personal liberty', detail: 'Procedure must be fair, just, reasonable (Maneka). Includes dignity, privacy (Puttaswamy), environment, livelihood, shelter, health, speedy trial.'},
+        {no: 'Art. 21A', head: 'Right to education', detail: 'Free & compulsory education for 6–14 years (86th Am.); RTE Act, 2009 operationalises.'},
+        {no: 'Art. 22', head: 'Arrest & detention', detail: 'Rights of arrestees; preventive detention up to 3 months unless extended; advisory board review.'},
+        {no: 'Art. 23', head: 'Human trafficking/forced labour', detail: 'Prohibited; “begar” illegal; exceptions for public service without discrimination.'},
+        {no: 'Art. 24', head: 'Child labour (hazardous)', detail: 'No child under 14 in factories/mines/hazardous jobs; strengthened by Child Labour (Amendment) Act, 2016.'},
+        {no: 'Arts. 25–28', head: 'Freedom of religion', detail: '25: conscience/practice/propagation; 26: manage religious affairs; 27: no tax for religion; 28: no religious instruction in state institutions.'},
+        {no: 'Arts. 29–30', head: 'Cultural & educational rights', detail: '29: conserve language/script/culture; 30: minorities can establish/administer institutions; reasonable regulation allowed (TMA Pai).'},
+        {no: 'Art. 32', head: 'Right to remedies (writs)', detail: 'Heart & soul of the Constitution (Ambedkar). SC can issue habeas corpus, mandamus, prohibition, certiorari, quo warranto.'},
+        {no: 'Art. 33', head: 'Modify FRs for forces', detail: 'Parliament may restrict FRs of armed forces, police, etc., to ensure discipline.'},
+        {no: 'Art. 34', head: 'Martial law indemnity', detail: 'Parliament may indemnify acts done during martial law.'},
+        {no: 'Art. 35', head: 'Parliament’s exclusive power', detail: 'Only Parliament can legislate to give effect to certain FRs (e.g., preventive detention).'},
+      ]
+    },
+
+    { partNo: 'Part IV', range: 'Articles 36–51', title: 'Directive Principles of State Policy (DPSPs)',
+      overview: 'Non-justiciable guidelines to the State to establish social, economic and political justice. Drawn from Irish Constitution; aim for a welfare state.',
+      tags: ['DPSPs','Welfare','Policy','Gandhian','Socialism'],
+      articles: [
+        {no:'Art. 36', head:'Definition', detail:'“State” here has the same meaning as in Art. 12.'},
+        {no:'Art. 37', head:'Nature of DPSPs', detail:'Non-justiciable but fundamental in governance; State must apply in making laws.'},
+        {no:'Art. 38', head:'Social order & justice', detail:'Promote welfare by securing social, economic, political justice; minimise inequalities.'},
+        {no:'Art. 39', head:'Policy principles', detail:'Adequate livelihood, equal pay, protection of children, distribution of material resources, avoid concentration of wealth, health & strength protected.'},
+        {no:'Art. 39A', head:'Free legal aid', detail:'Equal justice and free legal aid (42nd Amendment).'},
+        {no:'Art. 40', head:'Panchayats', detail:'Organisation of village panchayats as units of self-government.'},
+        {no:'Art. 41', head:'Right to work/education/assistance', detail:'Within limits of capacity & development.'},
+        {no:'Art. 42', head:'Just and humane work', detail:'Maternity relief; humane conditions of work.'},
+        {no:'Art. 43', head:'Living wage', detail:'Living wage, decent life for workers.'},
+        {no:'Art. 43A', head:'Workers’ participation', detail:'Participation of workers in management (42nd Amendment).'},
+        {no:'Art. 44', head:'Uniform Civil Code', detail:'Endeavour to secure UCC for citizens.'},
+        {no:'Art. 45', head:'Early childhood care', detail:'Provision for early childhood care & education to children below 6 years (86th Amendment reshaped).'},
+        {no:'Art. 46', head:'SC/ST/Weaker sections', detail:'Promote educational & economic interests; protect from social injustice & exploitation.'},
+        {no:'Art. 47', head:'Public health', detail:'Raise level of nutrition & standard of living; prohibition of intoxicating drinks/drugs injurious to health.'},
+        {no:'Art. 48', head:'Agriculture/animal husbandry', detail:'Organisation on modern lines; preserve/improve breeds and prohibit slaughter of cows/calves/other milch/draught cattle (as per State laws).'},
+        {no:'Art. 48A', head:'Environment', detail:'Protect & improve environment; safeguard forests & wildlife (42nd Amendment).'},
+        {no:'Art. 49', head:'Monuments', detail:'Protect monuments/places/objects of national importance.'},
+        {no:'Art. 50', head:'Separation of judiciary & executive', detail:'State to separate judiciary from executive in public services of the State.'},
+        {no:'Art. 51', head:'International peace', detail:'Promote international peace, just relations, respect for international law.'},
+      ]
+    },
+
+    { partNo: 'Part IVA', range: 'Article 51A', title: 'Fundamental Duties',
+      overview: 'Ten duties (originally) added by 42nd Amendment; 11th duty on education added by 86th Amendment. Non-justiciable moral obligations of citizens.',
+      tags: ['Duties','Citizens','42nd Amendment','86th Amendment'],
+      articles: [
+        {no:'Art. 51A', head:'Fundamental Duties (a–k)', detail:'Respect Constitution, National Flag/Anthem; cherish ideals of freedom struggle; uphold sovereignty/unity/integrity; defend country; promote harmony; renounce practices derogatory to women; value & preserve heritage; protect environment/compassion for living creatures; develop scientific temper/humanism; safeguard public property & abjure violence; strive for excellence; (k) provide opportunities for education to child/ward 6–14 years.'},
+      ]
+    },
+
+    { partNo: 'Part V', range: 'Articles 52–151', title: 'The Union (Executive, Parliament, Judiciary, CAG)',
+      overview: 'Establishes the Union Executive (President, VP, PM & Council of Ministers, AG), Parliament (RS/LS), Union Judiciary (SC), and CAG.',
+      tags: ['President','VP','PM','Council of Ministers','Parliament','SC','CAG'],
+      articles: [
+        {no:'Art. 52–62', head:'The President', detail:'Office (52); executive power (53); election (54–55); term/eligibility (56, 58); oath (60); impeachment (61); vacancy (62). Pardoning power at Art. 72.'},
+        {no:'Art. 63–71', head:'Vice-President', detail:'VP is ex officio Chairman of Rajya Sabha (64); election, term, removal similar to President; acts as President when vacancy arises (65).'},
+        {no:'Art. 72', head:'Pardoning power of President', detail:'Remission, respite, reprieve, commutation, pardon for Union offences; includes death sentence (subject to judicial review on limited grounds).'},
+        {no:'Art. 74–75', head:'Council of Ministers & PM', detail:'President acts on aid & advice of CoM headed by PM; CoM collectively responsible to Lok Sabha; max size capped by 91st Amendment (15% of LS strength for Union).'},
+        {no:'Art. 76', head:'Attorney General for India', detail:'Highest law officer; advises Govt.; has RS/LS audience rights but no vote.'},
+        {no:'Art. 78', head:'Duties of PM to President', detail:'PM communicates CoM decisions and furnishes information as required.'},
+        {no:'Art. 79–88', head:'Parliament', detail:'Comprises President + RS + LS (79); composition of RS (80) and LS (81); duration (83); sessions/prorogation (85); President’s address (86–87); rights of Ministers/AG in Houses (88).'},
+        {no:'Art. 89–97', head:'Officers & Salaries', detail:'RS Chairman/Deputy (89); LS Speaker/Deputy (93); vacation/resignation/removal (94–95); salaries (97).'},
+        {no:'Art. 100–104', head:'Voting & disqualifications', detail:'Quorum, voting (100); vacation of seats (101–103); disqualifications (104; also under RPA 1951).'},
+        {no:'Art. 105–106', head:'Privileges & pay', detail:'Freedom of speech in Parliament; powers, privileges, immunities; salaries & allowances of MPs.'},
+        {no:'Art. 107–111', head:'Legislative procedure', detail:'Origination and passage of Bills; Money Bills (110) certified by Speaker; President’s assent/return (111).'},
+        {no:'Art. 112–117', head:'Budget & financial bills', detail:'AFS (112); demands for grants (113); appropriation (114); supplementary/excess/exceptional grants (115–116); financial bills & recommendation of President (117).'},
+        {no:'Art. 118–122', head:'Rules & courts', detail:'Each House makes rules (118); committees (118); validity of proceedings not to be questioned in courts (122) subject to constitutional boundaries.'},
+        {no:'Art. 124–147', head:'Supreme Court', detail:'Establishment & constitution (124); appointment/tenure/removal of judges; jurisdiction—original (131), appellate (132–134), SLP (136), review (137); advisory jurisdiction (143); Comptroller of SC procedures.'},
+        {no:'Art. 148–151', head:'CAG of India', detail:'Independent constitutional auditor; audits Union/States, Govt companies; reports to President/Governors laid before Parliament/State legislatures.'},
+      ]
+    },
+
+    { partNo: 'Part VI', range: 'Articles 152–237', title: 'The States (Executive, Legislature, High Courts)',
+      overview: 'Mirrors Union framework at the State level: Governor, CM & CoM, State Legislature (Vidhan Sabha/Council), High Courts and Subordinate Courts.',
+      tags: ['Governor','CM','State Legislature','High Court'],
+      articles: [
+        {no:'Art. 152', head:'Definition', detail:'“State” excludes J&K (post-2019 reorganisation treated as UT).'},
+        {no:'Art. 153–167', head:'Governor & State Executive', detail:'Governor (153); appointment/tenure (155–156); discretionary powers (Constitution-limited); CM & CoM aid/advice (163–164); duties of CM (167).'},
+        {no:'Art. 168–212', head:'State Legislature', detail:'Composition of Houses (unicameral/bicameral) (168–171); sessions (174–175); privileges (194); money/finance bills at State level (198–207).'},
+        {no:'Art. 213', head:'Ordinances by Governor', detail:'Promulgate when legislature not in session; subject to similar limits as presidential ordinances.'},
+        {no:'Art. 214–231', head:'High Courts', detail:'Constitution of HCs; jurisdiction; appointment/transfer of judges (217, 222); writs under Art. 226 broader than Art. 32.'},
+        {no:'Art. 233–237', head:'Subordinate courts', detail:'Control of High Court over district courts; appointment of district judges.'},
+      ]
+    },
+
+    { partNo: 'Part VII', range: '—', title: 'States in Part B of the First Schedule (Repealed)',
+      overview: 'Omitted by the 7th Amendment Act, 1956 after reorganisation of states; hence non-operative today.',
+      tags: ['Repealed','7th Amendment'],
+      articles: [
+        {no:'—', head:'Repealed', detail:'This entire Part was deleted; numbering retained historically.'},
+      ]
+    },
+
+    { partNo: 'Part VIII', range: 'Articles 239–242', title: 'Union Territories',
+      overview: 'Administration of UTs by the President via administrators/LGs; special provisions for Delhi and Puducherry.',
+      tags: ['UTs','Delhi','Puducherry'],
+      articles: [
+        {no:'Art. 239', head:'Administration of UTs', detail:'UTs administered by President through administrators; powers delegated.'},
+        {no:'Art. 239AA/239AB', head:'Special provisions for NCT of Delhi', detail:'Legislative Assembly & CoM for Delhi; subjects excluded (public order, police, land). 239AB: provision for President’s rule in NCT.'},
+        {no:'Art. 239A', head:'Puducherry', detail:'LT government/Legislature for Puducherry as provided by law.'},
+        {no:'Art. 240–242', head:'Other provisions', detail:'President’s regulation-making power for certain UTs; creation of local legislatures/councils by law.'},
+      ]
+    },
+
+    { partNo: 'Part IX', range: 'Articles 243–243O', title: 'Panchayats',
+      overview: '73rd Amendment empowers rural local self-government with a three-tier PRI structure; reservation, finance commission, devolution, and elections.',
+      tags: ['Panchayati Raj','73rd Amendment','Local Governance'],
+      articles: [
+        {no:'Art. 243', head:'Definitions', detail:'Terms for the Part defined (district, panchayat, gram sabha, etc.).'},
+        {no:'Art. 243A', head:'Gram Sabha', detail:'Village assembly of registered voters; cornerstone of grassroots democracy.'},
+        {no:'Art. 243B–243C', head:'3-tier structure', detail:'Village, intermediate, district panchayats; composition by law.'},
+        {no:'Art. 243D', head:'Reservation', detail:'SC/ST + not less than 1/3 for women (including office of chairpersons).'},
+        {no:'Art. 243E', head:'Term & dissolution', detail:'5-year term; re-election within 6 months if dissolved.'},
+        {no:'Art. 243F', head:'Disqualification', detail:'As per law; State Election Commission regulates.'},
+        {no:'Art. 243G', head:'Powers & responsibilities', detail:'Devolution of functions incl. 11th Schedule (29 subjects).'},
+        {no:'Art. 243H–243I', head:'Finances & Finance Commission', detail:'State law for funds; State Finance Commission every 5 years.'},
+        {no:'Art. 243J–243O', head:'Accounts, audits, elections', detail:'SEC independence; courts not to interfere in election matters except as provided.'},
+      ]
+    },
+
+    { partNo: 'Part IXA', range: 'Articles 243P–243ZG', title: 'Municipalities',
+      overview: '74th Amendment creates urban local bodies: Municipal Corporations, Municipal Councils, Nagar Panchayats; 18 functions in 12th Schedule; reservations and finance provisions parallel to Panchayats.',
+      tags: ['Municipalities','74th Amendment','Urban Governance'],
+      articles: [
+        {no:'Art. 243P', head:'Definitions', detail:'Urban-specific definitions.'},
+        {no:'Art. 243Q', head:'Constitution of municipalities', detail:'Nagar Panchayat, Municipal Council, Municipal Corporation based on population/criteria.'},
+        {no:'Art. 243R–243S', head:'Composition & Wards Committees', detail:'Directly elected members; representation of MPs/MLAs as provided.'},
+        {no:'Art. 243T', head:'Reservation', detail:'SC/ST + not less than 1/3 for women (including chairpersons).'},
+        {no:'Art. 243U', head:'Duration', detail:'5 years; timely elections.'},
+        {no:'Art. 243V–243W', head:'Disqualifications & powers', detail:'State laws govern powers; 12th Schedule functions (18).'},
+        {no:'Art. 243X–243Z', head:'Finances/Planning', detail:'Taxes, grants; Metropolitan & District Planning Committees (243ZD–ZE).'},
+        {no:'Art. 243ZF–ZG', head:'Validation & bar of interference', detail:'Existing laws continue for a period; courts barred from interfering in delimitation matters.'},
+      ]
+    },
+
+    { partNo: 'Part IXB', range: 'Articles 243ZH–243ZT', title: 'Co-operative Societies',
+      overview: 'Added by 97th Amendment (partially upheld); democratic, autonomous, and professional management of co-ops with regular elections and audits.',
+      tags: ['Co-operatives','97th Amendment'],
+      articles: [
+        {no:'Arts. 243ZH–243ZT', head:'Co-ops framework', detail:'Definitions; incorporation; board size/term; reservations; professional management; regular elections within 6 months; audit and supersession limits.'},
+      ]
+    },
+
+    { partNo: 'Part X', range: 'Articles 244–244A', title: 'Scheduled and Tribal Areas',
+      overview: 'Administration of Scheduled Areas (5th Schedule) and Tribal Areas in NE (6th Schedule); autonomous councils with legislative/judicial powers in NE.',
+      tags: ['Tribal Areas','5th Schedule','6th Schedule'],
+      articles: [
+        {no:'Art. 244', head:'Scheduled & Tribal Areas', detail:'Application of 5th (mainland) & 6th (NE) Schedules.'},
+        {no:'Art. 244A', head:'Assam autonomous state', detail:'Provision to form an autonomous State within Assam with Legislature & CoM (if Parliament so provides).'},
+      ]
+    },
+
+    { partNo: 'Part XI', range: 'Articles 245–263', title: 'Relations between Union and States',
+      overview: 'Legislative relations (Union/State/Concurrent lists; repugnancy; residuary), Administrative relations (control directions), and Inter-State Council.',
+      tags: ['Federalism','Lists','Residuary','ISC'],
+      articles: [
+        {no:'Art. 245–247', head:'Legislative competence', detail:'Extent of laws; subject distribution via 7th Schedule lists; Parliament’s exclusive power for Union list; States for State list; both for Concurrent.'},
+        {no:'Art. 248–254', head:'Residuary & repugnancy', detail:'Residuary subjects with Parliament (248); if conflict on Concurrent, Union law prevails (254), subject to state law with presidential assent.'},
+        {no:'Art. 256–257', head:'Administrative control', detail:'States must ensure compliance with Union laws; Union may give directions.'},
+        {no:'Art. 262', head:'Inter-state water disputes', detail:'Parliament may provide adjudication and exclude SC/HC jurisdiction by law.'},
+        {no:'Art. 263', head:'Inter-State Council', detail:'President may establish ISC for coordination and dispute investigation.'},
+      ]
+    },
+
+    { partNo: 'Part XII', range: 'Articles 264–300A', title: 'Finance, Property, Contracts and Suits',
+      overview: 'Fiscal federalism (taxation powers, distribution of revenues), Consolidated/Contingency/Public funds, borrowing, property, contracts, and suits; right to property as a constitutional (not fundamental) right under Art. 300A.',
+      tags: ['Finance','Tax','Funds','FC','Property'],
+      articles: [
+        {no:'Art. 265', head:'Taxation only by authority of law', detail:'No tax shall be levied or collected except by authority of law.'},
+        {no:'Art. 266–267', head:'Funds of India', detail:'Consolidated Fund & Public Account (266); Contingency Fund (267).'},
+        {no:'Art. 268–281', head:'Distribution of revenues', detail:'Duties/Taxes levied/collected/assigned between Union & States; GST related changes by 101st Amendment; Finance Commission (280) every 5 years.'},
+        {no:'Art. 282–293', head:'Grants & borrowing', detail:'Union/States may make grants for public purposes; borrowing limits esp. where State owes Union (293).'},
+        {no:'Art. 294–300', head:'Property, contracts, suits', detail:'Succession to property; Govt contracts; suits and proceedings.'},
+        {no:'Art. 300A', head:'Right to property', detail:'No person shall be deprived of property save by authority of law—now a constitutional/legal right (44th Amendment).'},
+      ]
+    },
+
+    { partNo: 'Part XIII', range: 'Articles 301–307', title: 'Trade, Commerce and Intercourse within the Territory of India',
+      overview: 'Ensures freedom of trade/commerce across India with reasonable restrictions in public interest; Parliament and States may impose requirements subject to constitutional checks.',
+      tags: ['Trade','Commerce','Freedom of movement of goods'],
+      articles: [
+        {no:'Art. 301', head:'Freedom of trade/commerce/intercourse', detail:'Trade free throughout India, subject to reasonable restrictions.'},
+        {no:'Art. 302–305', head:'Parliament/States restrictions', detail:'Parliament may impose restrictions in public interest; States too with limitations (e.g., non-discrimination).'},
+        {no:'Art. 306–307', head:'(Repealed & Authority)', detail:'Old 306 repealed; 307 enables a suitable authority for Part XIII.'},
+      ]
+    },
+
+    { partNo: 'Part XIV', range: 'Articles 308–323', title: 'Services under the Union and the States',
+      overview: 'All-India services, Public Service Commissions (UPSC/SPSCs), and service conditions; independence and functions of PSCs.',
+      tags: ['UPSC','SPSC','All-India Services'],
+      articles: [
+        {no:'Art. 308–314', head:'Services', detail:'Regulate recruitment & conditions; protections for existing services at commencement (now largely spent).'},
+        {no:'Art. 315–323', head:'Public Service Commissions', detail:'UPSC and State PSCs—appointments, tenure, removal, functions; reports to President/Governor laid before legislatures.'},
+      ]
+    },
+
+    { partNo: 'Part XIVA', range: 'Articles 323A–323B', title: 'Tribunals',
+      overview: 'Authorises Parliament to create tribunals for service matters (323A) and for other specified matters (323B). SC retains judicial review over tribunal decisions.',
+      tags: ['Tribunals','Judicial review'],
+      articles: [
+        {no:'Art. 323A', head:'Administrative tribunals', detail:'For service matters of public servants; CAT is the central example.'},
+        {no:'Art. 323B', head:'Tribunals for other matters', detail:'Taxation, industrial & labour, land reforms, elections, etc.; subject to constitutional safeguards.'},
+      ]
+    },
+
+    { partNo: 'Part XV', range: 'Articles 324–329A', title: 'Elections',
+      overview: 'Independent Election Commission of India; delimitation; bar to interference by courts except by election petitions; anti-corruption/anti-malpractices framework through laws.',
+      tags: ['ECI','Delimitation','Elections'],
+      articles: [
+        {no:'Art. 324', head:'Superintendence by ECI', detail:'ECI supervises, directs, controls elections to Parliament, State Legislatures, President, Vice-President.'},
+        {no:'Art. 325–326', head:'One general roll & adult suffrage', detail:'No person ineligible on grounds of religion, race, caste, sex; adult suffrage (18+ after 61st Am.).'},
+        {no:'Art. 327–329', head:'Legislation & judicial bar', detail:'Parliament may make election laws; courts barred from interfering in delimitation and allotment matters; disputes via election petitions only.'},
+        {no:'Art. 329A', head:'(Omitted)', detail:'Inserted 39th Am. (1975) on PM/LS Speaker election disputes; later omitted by 44th Am. (1978).'},
+      ]
+    },
+
+    { partNo: 'Part XVI', range: 'Articles 330–342A', title: 'Special Provisions relating to Certain Classes',
+      overview: 'Reservations, representation, and commissions for SCs/STs/Anglo-Indians (nomination now abolished), socially/economically backward classes, and ST areas; EWS and OBC nuances via later amendments.',
+      tags: ['Reservation','SC/ST','Backward Classes','Commissions'],
+      articles: [
+        {no:'Art. 330–332', head:'Reservation of seats', detail:'Reservation for SC/ST in LS/State Assemblies; periodic extensions via amendments.'},
+        {no:'Art. 333', head:'Representation of Anglo-Indians', detail:'Nomination in State Assemblies—now ceased (104th Amendment ended Anglo-Indian nominations in LS & some States).'},
+        {no:'Art. 335', head:'Claims of SC/ST', detail:'Consistent with efficiency of administration; relaxation in qualifying marks/standards permissible.'},
+        {no:'Art. 338', head:'National Commission for SCs', detail:'Constitutional body to monitor safeguards for SCs; similar for STs at 338A.'},
+        {no:'Art. 338B', head:'NCBC', detail:'National Commission for Backward Classes (102nd Amendment) – constitutional status.'},
+        {no:'Art. 339–342', head:'Control & STs/SCs lists', detail:'Union control over ST welfare (339); 341/342: President specifies SC/ST lists, subject to Parliament’s law.'},
+        {no:'Art. 342A', head:'SEBC list', detail:'Added by 102nd/105th Amendments: central & state lists; States’ power clarified (105th).'},
+      ]
+    },
+
+    { partNo: 'Part XVII', range: 'Articles 343–351', title: 'Official Language',
+      overview: 'Hindi in Devanagari script as official language of the Union; English to continue for official purposes as provided; development of Hindi & enrichment of languages.',
+      tags: ['Language','Hindi','English','Eighth Schedule'],
+      articles: [
+        {no:'Art. 343–344', head:'Official language & commission', detail:'Hindi in Devanagari with international form of Indian numerals; Commission & Committee on Official Language.'},
+        {no:'Art. 345–347', head:'State languages', detail:'State legislature may adopt any language for official purposes; recognition of languages in States as needed.'},
+        {no:'Art. 348', head:'Language of courts/bills/acts', detail:'Proceedings in SC/HCs in English unless otherwise provided; authoritative texts in English.'},
+        {no:'Art. 350–351', head:'Special directives & Hindi development', detail:'Facilities for linguistic minorities; directive to develop Hindi drawing on other Indian languages.'},
+      ]
+    },
+
+    { partNo: 'Part XVIII', range: 'Articles 352–360', title: 'Emergency Provisions',
+      overview: 'National (Art. 352), State (President’s Rule, 356), and Financial Emergency (360). 44th Amendment tightened safeguards and civil liberties during emergencies.',
+      tags: ['Emergency','President’s Rule','Financial Emergency','44th Amendment'],
+      articles: [
+        {no:'Art. 352', head:'National Emergency', detail:'Proclaimed on grounds of war, external aggression or armed rebellion; effects on federalism & FRs; approval within 1 month; periodic reviews; Lok Sabha special majority to continue; freedoms under Art. 19 auto-suspended only during National Emergency (now with tighter limits).'},
+        {no:'Art. 356–357', head:'State Emergency (President’s Rule)', detail:'If constitutional machinery fails in a State; proclamation must be approved; consequences include dissolution/suspension of Assembly, Parliament’s legislative powers for State.'},
+        {no:'Art. 358–359', head:'Effect on FRs', detail:'Art. 19 automatically suspended only during National Emergency on war/external aggression; Art. 359 allows suspension of right to move courts for specified FRs (not Arts. 20 & 21 post-44th Am.).'},
+        {no:'Art. 360', head:'Financial Emergency', detail:'If financial stability/credit of India threatened; directions on financial matters; reduction of salaries incl. judges; never invoked till date.'},
+      ]
+    },
+
+    { partNo: 'Part XIX', range: 'Articles 361–367', title: 'Miscellaneous',
+      overview: 'Immunities of President/Governors; conduct of business; definitions and general provisions including “unless the context otherwise requires”.',
+      tags: ['Immunity','Definitions','Oaths'],
+      articles: [
+        {no:'Art. 361', head:'Immunity of President/Governor', detail:'Not answerable to any court for exercise of powers; no criminal proceedings during term; civil suits with notice.'},
+        {no:'Art. 361A–361B', head:'Media reports & disqualification', detail:'Protection for publication of Parliamentary proceedings; disqualification on ground of defection under a law (Tenth Schedule).'},
+        {no:'Art. 362–363A', head:'(Omitted/abolitions)', detail:'Abolition of privy purses; other transitional provisions omitted.'},
+        {no:'Art. 365', head:'Failure to comply with directions', detail:'If a State fails to comply with Union directions, it may be ground for Art. 356 action.'},
+        {no:'Art. 366–367', head:'Definitions & interpretation', detail:'General definitions; application of General Clauses Act for interpretation.'},
+      ]
+    },
+
+    { partNo: 'Part XX', range: 'Article 368', title: 'Amendment of the Constitution',
+      overview: 'Empowers Parliament to amend by various majorities; certain federal features require ratification by half the States. Amendments subject to Basic Structure doctrine (Kesavananda).',
+      tags: ['Amendment','368','Basic Structure'],
+      articles: [
+        {no:'Art. 368', head:'Amendment procedure', detail:'Special majority (2/3 present & voting + majority of total strength in each House); some provisions also require ratification by >1/2 State Legislatures. Basic Structure limits Parliament’s amending power.'},
+      ]
+    },
+
+    { partNo: 'Part XXI', range: 'Articles 369–392', title: 'Temporary, Transitional and Special Provisions',
+      overview: 'Initial transitional arrangements and special provisions for certain States/regions (many provisions now spent or modified).',
+      tags: ['Transitional','Special provisions'],
+      articles: [
+        {no:'Art. 370', head:'(Varied/modified status)', detail:'Special status of J&K—its constitutional position has been restructured by subsequent measures and reorganisation (2019).'},
+        {no:'Art. 371–371J', head:'Special provisions for States', detail:'Tailored arrangements for Maharashtra, Gujarat, Nagaland, Assam, Manipur, Andhra Pradesh, Sikkim, Mizoram, Arunachal Pradesh, Goa, Karnataka (371J).'},
+        {no:'Arts. 372–392', head:'Continuance & adaptation', detail:'Continuation of existing laws; power to remove difficulties (now spent); courts and service matters during transition.'},
+      ]
+    },
+
+    { partNo: 'Part XXII', range: 'Articles 393–395', title: 'Short title, commencement, authoritative text & repeals',
+      overview: 'Gives the Constitution its short title; commencement (26 Nov 1949 adoption; 26 Jan 1950 enforcement except certain provisions); repeals of pre-constitutional laws; authoritative text.',
+      tags: ['Short title','Commencement','Repeals'],
+      articles: [
+        {no:'Art. 393', head:'Short title', detail:'This Constitution is called the Constitution of India.'},
+        {no:'Art. 394', head:'Commencement', detail:'Provisions relating to elections, etc., came into force on 26 Nov 1949; the rest from 26 Jan 1950 (Republic Day).'},
+        {no:'Art. 395', head:'Repeals', detail:'Repeals the Indian Independence Act, 1947 and the Government of India Act, 1935.'},
+      ]
+    },
+  ];
+  </script>
+
+  <script>
+    const cards = document.getElementById('cards');
+    const q = document.getElementById('q');
+    const partFilter = document.getElementById('partFilter');
+
+    // Populate filter
+    partFilter.innerHTML = `<option value="">All Parts</option>` + DATA.map((p, i)=>`<option value="${i}">${p.partNo} — ${p.title}</option>`).join('');
+
+    function render(list){
+      cards.innerHTML = '';
+      list.forEach((p, idx)=>{
+        const el = document.createElement('details');
+        el.className = 'card';
+        el.open = idx < 2; // open first two by default
+        el.innerHTML = `
+          <summary>
+            <header>
+              <div class="title">${p.partNo}: ${p.title} <span class="badge">${p.range}</span></div>
+              <div class="meta">${p.overview}</div>
+              <div class="meta">${p.tags.map(t=>`<span class='pill'>${t}</span>`).join('')}</div>
+            </header>
+          </summary>
+          <div class="content" role="region" aria-label="${p.partNo} content">
+            ${p.articles.map(a=>`
+              <div class="article">
+                <h4>${a.no} — ${a.head}</h4>
+                <div class="muted">${a.detail}</div>
+              </div>
+            `).join('')}
+            <div class="note">Tip: Use the search box above to quickly jump to an Article or topic (e.g., “habeas corpus”, “Finance Commission”, “Art. 356”).</div>
+          </div>
+        `;
+        cards.appendChild(el);
+      });
+    }
+
+    function filter(){
+      const term = q.value.trim().toLowerCase();
+      const partIdx = partFilter.value;
+      let list = DATA;
+      if(partIdx){ list = [DATA[Number(partIdx)]]; }
+      if(!term){ render(list); return; }
+      const filtered = list.map(p=>({
+        ...p,
+        articles: p.articles.filter(a=>(`${a.no} ${a.head} ${a.detail} ${p.partNo} ${p.title}`).toLowerCase().includes(term))
+      })).filter(p=>p.articles.length>0);
+      render(filtered);
+    }
+
+    q.addEventListener('input', filter);
+    partFilter.addEventListener('change', filter);
+
+    document.getElementById('expandAll').addEventListener('click',()=>{
+      document.querySelectorAll('.card').forEach(d=>d.open=true);
+    });
+    document.getElementById('collapseAll').addEventListener('click',()=>{
+      document.querySelectorAll('.card').forEach(d=>d.open=false);
+    });
+
+    const themeSelector = document.getElementById("themeSelector");
+
+// Load saved theme from localStorage (if any)
+document.body.className = localStorage.getItem("theme") || "default";
+themeSelector.value = document.body.className;
+
+// Change theme on selection
+themeSelector.addEventListener("change", (e) => {
+  const theme = e.target.value;
+  document.body.className = theme;
+  localStorage.setItem("theme", theme); // Save preference
+});
+
+
+    document.getElementById('printBtn').addEventListener('click',()=>window.print());
+
+    document.getElementById('downloadBtn').addEventListener('click',()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Indian_Constitution_All_Parts_Articles.html'; a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    render(DATA);
+  </script>
+</body>
+</html>

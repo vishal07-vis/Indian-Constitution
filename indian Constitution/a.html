@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amendment Procedure (Article 368) – Complete Notes</title>
+  <style>
+    :root{
+      --bg:#0b1120;        /* slate-950 */
+      --panel:#111827;     /* gray-900 */
+      --muted:#94a3b8;     /* slate-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --brand:#22d3ee;     /* cyan-400 */
+      --accent:#a78bfa;    /* violet-400 */
+      --good:#4ade80;      /* green-400 */
+      --warn:#fbbf24;      /* amber-400 */
+      --bad:#f87171;       /* red-400 */
+      --chip:#1f2937;      /* gray-800 */
+      --border:#1f2937;    
+      --card:#0f172a;      /* slate-900 */
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg:#f8fafc;        
+      --panel:#ffffff;     
+      --muted:#475569;     
+      --text:#0f172a;      
+      --brand:#0ea5e9;     
+      --accent:#7c3aed;    
+      --good:#16a34a;      
+      --warn:#d97706;      
+      --bad:#dc2626;       
+      --chip:#eef2ff;      
+      --border:#e2e8f0;    
+      --card:#ffffff;      
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg); color:var(--text); line-height:1.55; 
+    }
+    .app{max-width:1100px; margin:auto; padding:20px;}
+    header{
+      position:sticky; top:0; z-index:50; background:linear-gradient(180deg,var(--bg),color-mix(in oklab,var(--bg),transparent 12%));
+      backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid var(--border);
+    }
+    .hdr{display:flex; gap:16px; align-items:center; padding:14px 8px;}
+    .brand{font-weight:800; letter-spacing:.3px;}
+    .brand .mini{font-weight:600; color:var(--muted); font-size:.9rem}
+    .tag{border:1px solid var(--border); background:var(--chip); padding:2px 8px; border-radius:999px; font-size:.75rem;}
+    .spacer{flex:1}
+    .btn, button{cursor:pointer; border-radius:14px; border:1px solid var(--border); background:var(--panel); color:var(--text); padding:10px 14px; box-shadow:var(--shadow);}
+    .btn:hover{transform:translateY(-1px)}
+
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:22px; margin:18px 0 24px}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .h1{font-size:1.9rem; font-weight:900; margin:.25rem 0 0}
+    .lead{color:var(--muted); margin-top:8px}
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .key{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+    .k{background:var(--panel); border:1px dashed var(--border); border-radius:16px; padding:14px}
+    .k h4{margin:0 0 6px; font-size:1rem}
+
+    .toolbar{display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 18px}
+    .search{flex:1; display:flex; align-items:center; gap:8px; border:1px solid var(--border); background:var(--panel); padding:10px 12px; border-radius:14px}
+    .search input{flex:1; background:transparent; border:none; outline:none; color:var(--text); font-size:1rem}
+    .filters{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{background:var(--chip); border:1px solid var(--border); padding:8px 12px; border-radius:999px; font-size:.85rem}
+    .chip[data-active="true"]{outline:2px solid var(--brand)}
+
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
+    .col-8{grid-column:span 8}
+    .col-4{grid-column:span 4}
+
+    .list{display:grid; gap:12px}
+    .amend{background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow:hidden}
+    .amend .head{display:flex; gap:10px; align-items:center; padding:14px 16px; cursor:pointer}
+    .amend .num{font-weight:900; background:var(--brand); color:#03151a; padding:4px 10px; border-radius:999px}
+    .amend .meta{color:var(--muted); font-size:.9rem}
+    .amend .title{font-weight:700}
+    .amend .body{display:none; padding:0 16px 16px}
+    .amend[open] .body{display:block}
+    .amend ul{margin:.5rem 0 .4rem 1.25rem}
+    .pill{font-size:.75rem; padding:2px 8px; border-radius:999px; border:1px solid var(--border); background:var(--chip)}
+
+    .aside{position:sticky; top:88px; display:grid; gap:10px; align-self:start}
+    .toc a{display:flex; gap:8px; align-items:center; padding:8px 10px; border-radius:12px; color:inherit; text-decoration:none; border:1px solid var(--border); background:var(--panel)}
+    .toc a:hover{outline:2px solid var(--accent)}
+
+    .landmarks .itm{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:14px; display:grid; gap:6px}
+
+    .muted{color:var(--muted)}
+    .small{font-size:.9rem}
+    .note{border-left:4px solid var(--accent); background:color-mix(in oklab,var(--accent),transparent 86%); padding:10px 12px; border-radius:10px;}
+
+    .footer{margin:24px 0 80px; color:var(--muted); font-size:.9rem}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .col-8,.col-4{grid-column:span 1}
+      .aside{position:static}
+    }
+
+    /* Print */
+    @media print{
+      header,.toolbar,.aside,.chips,.btn{display:none !important}
+      .app{max-width:100%; padding:0}
+      body{background:#fff; color:#000}
+      .card,.amend,.k{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="app hdr">
+      <div class="brand">
+        <div>Amendment Procedure <span class="mini">(Article 368)</span></div>
+        <div class="small muted">India’s Constitution – key amendments, timelines & exam-ready notes</div>
+      </div>
+      <span class="tag">Updated: Sep 2025</span>
+      <div class="spacer"></div>
+      <button id="themeBtn" class="btn" title="Toggle light/dark">🌗 Theme</button>
+      <button id="printBtn" class="btn" title="Print / Save as PDF">🖨️ Print/PDF</button>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="hero">
+      <div class="card">
+        <div class="h1">Introduction</div>
+        <p class="lead">The Constitution of India came into force on <b>26 January 1950</b>. It is the world’s longest written Constitution and has been amended many times to remain dynamic while preserving the <b>Basic Structure</b> (Kesavananda Bharati, 1973).</p>
+        <div class="chips">
+          <span class="pill">Longest written Constitution</span>
+          <span class="pill">Basic Structure doctrine</span>
+          <span class="pill">Judicial review</span>
+        </div>
+        <div class="note small" style="margin-top:10px">Note: By 2023, there were <b>106 Constitutional Amendment Acts</b>. Keep an eye on newer ones in news/exams.</div>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 10px">Types of Amendments under Article 368</h3>
+        <div class="key">
+          <div class="k">
+            <h4>1) Simple Majority</h4>
+            <div class="small muted">Outside Art. 368; e.g., formation of new states, citizenship, UTs, schedules renaming etc.</div>
+          </div>
+          <div class="k">
+            <h4>2) Special Majority</h4>
+            <div class="small muted">Art. 368(2) – majority of total membership + 2/3 of members present & voting. Used for most provisions incl. FRs & DPSPs.</div>
+          </div>
+          <div class="k">
+            <h4>3) Special Majority + State Ratification</h4>
+            <div class="small muted">Also needs ratification by ≥ 1/2 of States – for federal features (e.g., GST, distribution of powers, HC/SC jurisdiction).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div class="search">
+        🔎
+        <input id="q" placeholder="Search amendment number, year, topic (e.g., GST, Emergency, 42nd)…" />
+      </div>
+      <div class="filters">
+        <button class="chip" data-filter="all" data-active="true">All</button>
+        <button class="chip" data-filter="1950s">1950s</button>
+        <button class="chip" data-filter="1960s">1960s</button>
+        <button class="chip" data-filter="1970s">1970s</button>
+        <button class="chip" data-filter="1980s">1980s</button>
+        <button class="chip" data-filter="1990s">1990s</button>
+        <button class="chip" data-filter="2000s">2000s</button>
+        <button class="chip" data-filter="2010s">2010s</button>
+        <button class="chip" data-filter="2020s">2020s</button>
+        <button class="chip" data-filter="Landmark">Landmark</button>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="col-8">
+        <div id="list" class="list" aria-live="polite"></div>
+      </div>
+      <aside class="col-4 aside">
+        <div class="toc">
+          <a href="#landmarks">🏆 Landmark Amendments – One-Glance</a>
+          <a href="#faq">❓ FAQs & Exam Tips</a>
+          <a href="#glossary">📚 Glossary</a>
+        </div>
+        <div class="card" id="stats"></div>
+        <div class="card small">
+          <b>Exam Tip:</b> Remember the trio: <b>24th</b> (Parliament’s power), <b>25th</b> (property curtailed), <b>42nd</b> (Mini Constitution) → <b>44th</b> rollback.
+        </div>
+      </aside>
+    </div>
+
+    <section id="landmarks" class="card landmarks" style="margin-top:18px">
+      <h3 style="margin:0 0 8px">🏆 Landmark Amendments (with why they matter)</h3>
+      <div class="grid" style="grid-template-columns:1fr 1fr; gap:12px">
+        <div class="itm"><b>1st (1951)</b> – Adds <b>9th Schedule</b>, reasonable restrictions in Art. 19(2), enables reservations for Backward Classes. <span class="muted small">Balances FRs with reforms.</span></div>
+        <div class="itm"><b>7th (1956)</b> – States Reorganisation, birth of linguistic states; UTs with legislatures. <span class="muted small">Federal map redrawn.</span></div>
+        <div class="itm"><b>24th (1971)</b> – Confirms Parliament’s power to amend FRs; President bound to assent. <span class="muted small">Post-Golaknath fix.</span></div>
+        <div class="itm"><b>25th (1971)</b> – Curbs Right to Property; DPSPs prioritized in limited fields. <span class="muted small">Social justice tilt.</span></div>
+        <div class="itm"><b>42nd (1976)</b> – “Socialist, Secular, Integrity” added; strengthens DPSPs; curtails courts; LS term 6 yrs (later reversed). <span class="muted small">Emergency centralization.</span></div>
+        <div class="itm"><b>44th (1978)</b> – Restores liberties; tightens Emergency; Property becomes legal right (Art. 300A). <span class="muted small">Democratic safeguards.</span></div>
+        <div class="itm"><b>61st (1989)</b> – Voting age 21→18. <span class="muted small">Youth empowerment.</span></div>
+        <div class="itm"><b>73rd & 74th (1992)</b> – PRIs & ULBs with 11th/12th Schedules. <span class="muted small">Grassroots democracy.</span></div>
+        <div class="itm"><b>86th (2002)</b> – RTE (Art. 21A) + duty of parents. <span class="muted small">Child rights.</span></div>
+        <div class="itm"><b>91st (2003)</b> – Cap CoM to 15% + stronger anti-defection. <span class="muted small">Stable governments.</span></div>
+        <div class="itm"><b>101st (2016)</b> – GST + Council. <span class="muted small">Tax union.</span></div>
+        <div class="itm"><b>103rd (2019)</b> – 10% EWS reservation. <span class="muted small">New affirmative action route.</span></div>
+        <div class="itm"><b>106th (2023)</b> – 33% seats for women in LS/Assemblies; effective post-delimitation & census. <span class="muted small">Gender representation.</span></div>
+      </div>
+    </section>
+
+    <section id="faq" class="card" style="margin-top:14px">
+      <h3 style="margin:0 0 8px">❓ FAQs & Exam Tips</h3>
+      <ul>
+        <li><b>Can Parliament amend the Basic Structure?</b> – No. Parliament’s amending power is wide but <i>cannot</i> damage the Basic Structure (Kesavananda, 1973).</li>
+        <li><b>Is Right to Property a Fundamental Right?</b> – No (after 44th). It’s now a <i>legal right</i> under Art. 300A.</li>
+        <li><b>Which amendments need state ratification?</b> – Those touching federal provisions: distribution of powers, lists, representation of states, SC/HC jurisdiction, Art. 368 itself, GST etc.</li>
+        <li><b>Women’s Reservation (106th) in force?</b> – Law passed in 2023; implementation after next delimitation post-census.</li>
+      </ul>
+    </section>
+
+    <section id="glossary" class="card" style="margin-top:14px">
+      <h3 style="margin:0 0 8px">📚 Glossary</h3>
+      <p class="small muted">FRs – Fundamental Rights; DPSPs – Directive Principles of State Policy; PRIs – Panchayati Raj Institutions; ULBs – Urban Local Bodies.</p>
+    </section>
+
+    <div class="footer app small">Made for quick revision + interview/exam prep. Use the Search, Filters and Print to PDF.</div>
+  </main>
+
+  <script>
+    // Theme
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const printBtn = document.getElementById('printBtn');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if(savedTheme==='light'){ root.setAttribute('data-theme','light'); }
+    themeBtn.addEventListener('click',()=>{
+      const isLight = root.getAttribute('data-theme')==='light';
+      root.toggleAttribute('data-theme');
+      if(isLight){ root.removeAttribute('data-theme'); localStorage.setItem('theme','dark'); }
+      else { root.setAttribute('data-theme','light'); localStorage.setItem('theme','light'); }
+    });
+    printBtn.addEventListener('click',()=>{ window.print(); });
+
+    // Data – curated from the prompt
+    const DATA = [
+      // 1950s
+      {no:1, year:1951, decade:'1950s', title:'1st Amendment Act, 1951', background:'Courts struck down land reforms; free speech cases (Romesh Thapar, Brij Bhushan).', provisions:[ 'Reasonable restrictions added to Art. 19(2) (speech & expression).', 'Introduced 9th Schedule to immunize certain laws from judicial review (esp. land reforms).', 'Enabled reservations for socially & educationally backward classes.' ], importance:'Balanced FRs with socio‑economic reforms.', tags:['Landmark','Speech','9th Schedule']},
+      {no:7, year:1956, decade:'1950s', title:'7th Amendment Act, 1956', background:'Movement for linguistic states (post Potti Sriramulu).', provisions:[ 'States Reorganisation Act implemented.', 'Created 14 States & 6 Union Territories.', 'Provided for UTs with legislatures.' ], importance:'Beginning of linguistic state formation.', tags:['Landmark','Federalism']},
+
+      // 1960s
+      {no:10, year:1961, decade:'1960s', title:'10th Amendment Act, 1961', background:'Integration of enclaves.', provisions:[ 'Integrated Dadra & Nagar Haveli into India.' ], importance:'Territorial consolidation.', tags:['Integration']},
+      {no:12, year:1962, decade:'1960s', title:'12th Amendment Act, 1962', background:'Liberation from Portuguese rule.', provisions:[ 'Included Goa, Daman & Diu as UT.' ], importance:'Expanded Indian Union.', tags:['Integration']},
+      {no:13, year:1962, decade:'1960s', title:'13th Amendment Act, 1962', background:'Naga Hills-Tuensang integration with autonomy demands.', provisions:[ 'Created State of Nagaland; special protections via Art. 371A.' ], importance:'Integration with autonomy.', tags:['Federalism']},
+      {no:14, year:1962, decade:'1960s', title:'14th Amendment Act, 1962', background:'Transfer of French territories.', provisions:[ 'Incorporated Puducherry (Pondicherry) as UT; provided Assembly & Council of Ministers.' ], importance:'Strengthened federal integration.', tags:['Integration']},
+
+      // 1970s
+      {no:24, year:1971, decade:'1970s', title:'24th Amendment Act, 1971', background:'Golaknath (1967) limited amending power.', provisions:[ 'Affirmed Parliament’s power to amend any part of Constitution incl. FRs.', 'Made President’s assent to amendment bills mandatory.' ], importance:'Strengthened Parliament’s authority.', tags:['Landmark','FRs']},
+      {no:25, year:1971, decade:'1970s', title:'25th Amendment Act, 1971', background:'To prioritize socio-economic reforms.', provisions:[ 'Curtailed Right to Property.', 'Gave primacy to certain DPSPs over FRs.' ], importance:'Socialism over individual property rights.', tags:['Property','DPSP']},
+      {no:26, year:1971, decade:'1970s', title:'26th Amendment Act, 1971', background:'Abolition of princely privileges.', provisions:[ 'Abolished Privy Purses & titles of former rulers.' ], importance:'Ended special privileges; equality.', tags:['Equality']},
+      {no:31, year:1973, decade:'1970s', title:'31st Amendment Act, 1973', background:'Representation adjustments.', provisions:[ 'Increased Lok Sabha seats from 525 to 545.' ], importance:'Ensured fairer representation.', tags:['Representation']},
+      {no:36, year:1975, decade:'1970s', title:'36th Amendment Act, 1975', background:'Sikkim’s union with India.', provisions:[ 'Made Sikkim the 22nd State of India.' ], importance:'Completed national integration.', tags:['Integration']},
+      {no:39, year:1975, decade:'1970s', title:'39th Amendment Act, 1975', background:'Post Indira Gandhi vs Raj Narain.', provisions:[ 'Placed elections of PM, President, VP, Speaker beyond judicial review (later checked by SC).' ], importance:'Weakened checks during Emergency.', tags:['Emergency']},
+      {no:42, year:1976, decade:'1970s', title:'42nd Amendment Act, 1976 (Mini‑Constitution)', background:'Emergency era centralization.', provisions:[ 'Added “Socialist, Secular, Integrity” in Preamble.', 'Extended LS term 5→6 years (later reverted).', 'Gave DPSPs primacy; curtailed judiciary in several ways.' ], importance:'Most sweeping & controversial amendment.', tags:['Landmark','Emergency']},
+
+      // 1980s (44th is 1978 but studied with the 1980s heading in prompt; keep chronological)
+      {no:44, year:1978, decade:'1980s', title:'44th Amendment Act, 1978', background:'Post‑Emergency reforms.', provisions:[ 'Restored several rights curtailed by 42nd.', 'Made national Emergency harder to proclaim & continue.', 'Converted Right to Property into legal right (Art. 300A).'], importance:'Strengthened democracy & liberties.', tags:['Landmark','Emergency']},
+      {no:52, year:1985, decade:'1980s', title:'52nd Amendment Act, 1985', background:'Aaya Ram, Gaya Ram defections.', provisions:[ 'Inserted 10th Schedule – Anti‑Defection Law.' ], importance:'Curb political defections.', tags:['Anti‑Defection']},
+      {no:61, year:1989, decade:'1980s', title:'61st Amendment Act, 1989', background:'Widen franchise to youth.', provisions:[ 'Lowered voting age from 21 to 18 years.' ], importance:'Youth participation.', tags:['Elections']},
+
+      // 1990s
+      {no:69, year:1991, decade:'1990s', title:'69th Amendment Act, 1991', background:'Demand for autonomy in Delhi.', provisions:[ 'Created NCT of Delhi with Assembly & CM; special status with LG.' ], importance:'Balance between UT & state features.', tags:['Federalism']},
+      {no:73, year:1992, decade:'1990s', title:'73rd Amendment Act, 1992', background:'Strengthen local self‑government (rural).', provisions:[ 'Constitutional status to Panchayats.', '11th Schedule with 29 subjects; reservations; State Finance Commission etc.' ], importance:'Grassroots democracy.', tags:['Local Govt']},
+      {no:74, year:1992, decade:'1990s', title:'74th Amendment Act, 1992', background:'Urban reforms.', provisions:[ 'Constitutional status to Municipalities.', '12th Schedule with 18 subjects; urban planning, public health etc.' ], importance:'Urban governance strengthened.', tags:['Local Govt']},
+
+      // 2000s
+      {no:86, year:2002, decade:'2000s', title:'86th Amendment Act, 2002', background:'Universal elementary education.', provisions:[ 'Inserted Art. 21A – Right to Education (6–14 yrs).', 'Added duty of parents/guardians to provide education.' ], importance:'Landmark in child rights.', tags:['Education','Landmark']},
+      {no:91, year:2003, decade:'2000s', title:'91st Amendment Act, 2003', background:'Coalition instability & defections.', provisions:[ 'Capped size of Council of Ministers to 15% of House strength.', 'Tightened anti‑defection provisions.' ], importance:'Checks on opportunistic politics.', tags:['Governance']},
+      {no:92, year:2003, decade:'2000s', title:'92nd Amendment Act, 2003', background:'Language inclusion.', provisions:[ 'Added Bodo, Dogri, Maithili, Santhali to 8th Schedule.' ], importance:'Recognized linguistic diversity.', tags:['Language']},
+      {no:97, year:2011, decade:'2010s', title:'97th Amendment Act, 2011', background:'Strengthen cooperatives.', provisions:[ 'Inserted Part IXB – Co‑operative Societies; status to cooperatives.' ], importance:'Democratic, autonomous cooperatives.', tags:['Cooperatives']},
+
+      // 2010s
+      {no:101, year:2016, decade:'2010s', title:'101st Amendment Act, 2016', background:'Tax harmonization.', provisions:[ 'Introduced GST & GST Council; constitutional framework for indirect tax reform.' ], importance:'One nation, one tax (indirect).', tags:['GST','Landmark']},
+      {no:102, year:2018, decade:'2010s', title:'102nd Amendment Act, 2018', background:'OBC welfare architecture.', provisions:[ 'Constitutional status to NCBC; role in OBC matters.' ], importance:'Strengthened OBC institutions.', tags:['OBC']},
+      {no:103, year:2019, decade:'2010s', title:'103rd Amendment Act, 2019', background:'Address economic disadvantage.', provisions:[ '10% reservation for Economically Weaker Sections (EWS).'], importance:'Historic move in reservations.', tags:['Reservation','Landmark']},
+
+      // 2020s
+      {no:104, year:2020, decade:'2020s', title:'104th Amendment Act, 2020', background:'Periodical review of reserved seats.', provisions:[ 'Abolished Anglo‑Indian reserved seats in Parliament & State Assemblies; extended SC/ST reservation in legislatures.'], importance:'Seat composition update.', tags:['Representation']},
+      {no:105, year:2021, decade:'2020s', title:'105th Amendment Act, 2021', background:'State role in OBC lists.', provisions:[ 'Restored states’ power to prepare & maintain OBC lists.'], importance:'Reinforced federalism.', tags:['OBC','Federalism']},
+      {no:106, year:2023, decade:'2020s', title:'106th Amendment Act, 2023', background:'Women’s representation in legislatures.', provisions:[ 'Reserves 33% seats for women in Lok Sabha & State Assemblies.', 'Operational after delimitation & census.'], importance:'Milestone for gender equality.', tags:['Women','Landmark']},
+    ];
+
+    // Render list
+    const list = document.getElementById('list');
+    const stats = document.getElementById('stats');
+    const q = document.getElementById('q');
+    const filterChips = [...document.querySelectorAll('.filters .chip')];
+    let activeFilter = 'all';
+
+    function amendCard(a){
+      const id = `am-${a.no}`;
+      return `
+      <article class="amend" id="${id}">
+        <div class="head" role="button" aria-controls="${id}-body" aria-expanded="false">
+          <span class="num">${a.no}ᵗʰ</span>
+          <div style="flex:1">
+            <div class="title">${a.title}</div>
+            <div class="meta">Year: ${a.year} · <span class="pill">${a.decade}</span> ${a.tags?.map(t=>`<span class='pill'>${t}</span>`).join(' ') || ''}</div>
+          </div>
+          <span>▼</span>
+        </div>
+        <div id="${id}-body" class="body">
+          ${a.background? `<div class="small muted">Background: ${a.background}</div>`:''}
+          ${a.provisions? `<ul>${a.provisions.map(p=>`<li>${p}</li>`).join('')}</ul>`:''}
+          ${a.importance? `<div class="small"><b>Importance:</b> ${a.importance}</div>`:''}
+        </div>
+      </article>`
+    }
+
+    function render(){
+      const text = (q.value||'').trim().toLowerCase();
+      const filtered = DATA.filter(a=>{
+        const inDecade = activeFilter==='all' || a.decade===activeFilter || (activeFilter==='Landmark' && (a.tags||[]).includes('Landmark'));
+        const inSearch = !text || [a.title, a.background, a.importance, (a.tags||[]).join(' '), String(a.no), String(a.year), a.decade].join(' ').toLowerCase().includes(text);
+        return inDecade && inSearch;
+      }).sort((x,y)=> x.year===y.year ? x.no - y.no : x.year - y.year);
+
+      list.innerHTML = filtered.map(amendCard).join('');
+
+      // stats
+      const total = DATA.length;
+      const byDecade = Object.groupBy ? Object.groupBy(DATA, a=>a.decade) : DATA.reduce((m,a)=>((m[a.decade]=m[a.decade]||[]).push(a),m),{});
+      const lm = DATA.filter(a=> (a.tags||[]).includes('Landmark')).length;
+      stats.innerHTML = `
+        <b>Quick Stats</b>
+        <div class="small muted">Total listed here: <b>${total}</b> · Landmark: <b>${lm}</b></div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px">${Object.keys(byDecade).sort().map(d=>`<span class='pill'>${d}: ${byDecade[d].length}</span>`).join(' ')}</div>
+      `;
+
+      // expand/collapse handlers
+      list.querySelectorAll('.amend .head').forEach(h=>{
+        h.addEventListener('click',()=>{
+          const article = h.closest('.amend');
+          const expanded = article.hasAttribute('open');
+          if(expanded){ article.removeAttribute('open'); h.setAttribute('aria-expanded','false'); }
+          else { article.setAttribute('open',''); h.setAttribute('aria-expanded','true'); }
+        });
+      });
+    }
+
+    q.addEventListener('input', render);
+    filterChips.forEach(c=>c.addEventListener('click',()=>{
+      filterChips.forEach(x=>x.dataset.active='false');
+      c.dataset.active='true';
+      activeFilter = c.dataset.filter;
+      render();
+    }));
+
+    render();
+  </script>
+</body>
+</html>

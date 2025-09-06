@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parliament of India — Study Guide</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#60a5fa;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;background:linear-gradient(180deg,#071129 0%, #071726 100%);color:#e6eef6;line-height:1.5}
+    .container{max-width:1000px;margin:28px auto;padding:20px}
+    header{display:flex;gap:16px;align-items:center}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 18px}
+    nav{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer;font-weight:600}
+    .controls{display:flex;gap:8px;margin-left:auto}
+    input.search{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:10px;color:inherit;width:220px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    main{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    aside{background:rgba(255,255,255,0.02);padding:14px;border-radius:12px;height:fit-content;border:1px solid rgba(255,255,255,0.02)}
+    .section{margin-bottom:14px}
+    .section h2{margin:0 0 8px;font-size:16px}
+    .toggle{background:transparent;border:0;color:var(--accent);cursor:pointer;text-decoration:underline;padding:0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:8px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.02)}
+    details summary{cursor:pointer;outline:none;padding:8px 6px;border-radius:6px}
+    details[open] summary{background:rgba(255,255,255,0.01)}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    td,th{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;font-size:14px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .copybtn{background:transparent;border:1px dashed rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px;color:var(--muted);cursor:pointer}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.controls{margin-top:8px;width:100%;justify-content:flex-start}.container{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Parliament of India </h1>
+        <p class="lead">Articles, composition, procedures, privileges, bills, amendments, special terms — all organised for study & revision.</p>
+      </div>
+      <div class="controls">
+        <input class="search" id="search" placeholder="Search topics (eg: Money Bill, Article 110)..." />
+        <button class="btn" id="expandAll">Expand all</button>
+        <button class="btn" id="collapseAll">Collapse all</button>
+        <button class="btn" id="download">Download HTML</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main id="main">
+
+        <section class="section card" id="what-is-parliament">
+          <h2>1. What is Parliament?</h2>
+          <p>Definition: The Parliament of India is the <strong>supreme law-making body</strong> at the Union level. It represents the sovereignty of the people. Structure (Article 79): <em>President, Lok Sabha, Rajya Sabha.</em> Note: A bill requires President's assent to become law.</p>
+        </section>
+
+        <section class="section card" id="articles">
+          <h2>2. Articles dealing with Parliament (Art. 79–122)</h2>
+          <table>
+            <thead><tr><th style="width:90px">Article</th><th>Subject</th></tr></thead>
+            <tbody>
+              <tr><td>79</td><td>Constitution of Parliament</td></tr>
+              <tr><td>80</td><td>Composition of Rajya Sabha</td></tr>
+              <tr><td>81</td><td>Composition of Lok Sabha</td></tr>
+              <tr><td>82</td><td>Readjustment after Census</td></tr>
+              <tr><td>83</td><td>Duration of Houses</td></tr>
+              <tr><td>84</td><td>Qualification of MPs</td></tr>
+              <tr><td>85</td><td>Sessions of Parliament</td></tr>
+              <tr><td>86</td><td>President's Address</td></tr>
+              <tr><td>87</td><td>Special Address by President</td></tr>
+              <tr><td>88</td><td>Rights of Ministers & AG</td></tr>
+              <tr><td>93</td><td>Speaker & Deputy Speaker (Lok Sabha)</td></tr>
+              <tr><td>94</td><td>Removal of Speaker/Deputy Speaker</td></tr>
+              <tr><td>100</td><td>Voting in Houses</td></tr>
+              <tr><td>101–104</td><td>Disqualifications of MPs</td></tr>
+              <tr><td>105</td><td>Parliamentary Privileges</td></tr>
+              <tr><td>106</td><td>Salaries & Allowances of MPs</td></tr>
+              <tr><td>107–111</td><td>Legislative Procedures</td></tr>
+              <tr><td>112–117</td><td>Budget, Money Bills, Finance Bills</td></tr>
+              <tr><td>118–122</td><td>Rules, Committees, Courts not to question proceedings</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <details class="card" id="composition" open>
+          <summary><strong>3. Composition of Houses</strong></summary>
+          <div style="padding:10px 6px">
+            <h3>Lok Sabha (Art. 81)</h3>
+            <p class="small">Max strength: <strong>552</strong> — 530 (States) + 20 (UTs) + 2 Anglo-Indian nominees (abolished 104th Amendment, 2019). Current strength: <strong>543</strong>. Term: 5 years (can be dissolved).</p>
+
+            <h3>Rajya Sabha (Art. 80)</h3>
+            <p class="small">Max strength: <strong>250</strong> — 238 elected by state/UT legislatures by proportional representation; 12 nominated by President (people with distinction in literature, art, science & social service). Permanent body; 1/3rd retire every 2 years.</p>
+          </div>
+        </details>
+
+        <details class="card" id="qualifications"><summary><strong>4. Qualifications of MPs (Art. 84)</strong></summary>
+          <div style="padding:10px 6px">
+            <ul>
+              <li>Citizen of India.</li>
+              <li>Minimum age: <strong>25</strong> for Lok Sabha; <strong>30</strong> for Rajya Sabha.</li>
+              <li>Must also satisfy qualifications as per the Representation of People Act, 1951.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="card" id="disqualifications"><summary><strong>5. Disqualifications (Art. 102 + RPA, 1951)</strong></summary>
+          <div style="padding:10px 6px">
+            <ul>
+              <li>Holding an office of profit under the government (exceptions by law).</li>
+              <li>Declared of unsound mind by a competent court.</li>
+              <li>Undischarged insolvent.</li>
+              <li>Not a citizen of India or acquiring foreign citizenship.</li>
+              <li>Disqualified under electoral laws — e.g., corruption, certain criminal convictions, anti-defection rules (10th Schedule).</li>
+            </ul>
+
+            <h4>Anti-Defection Law (10th Schedule)</h4>
+            <p class="small">Added by the <strong>52nd Amendment (1985)</strong>. A member is disqualified if they voluntarily give up party membership or vote/abstain contrary to the party whip. Exceptions exist for mergers (usually 2/3rd).</p>
+          </div>
+        </details>
+
+        <details class="card" id="reservation"><summary><strong>6. Reservation of Seats (Art. 330–334)</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Seats are reserved for Scheduled Castes (SC) and Scheduled Tribes (ST) in the Lok Sabha and state assemblies. Anglo-Indian nomination was abolished by the 104th Constitutional Amendment (2019). The 106th Amendment (2023) provides for 33% reservation for women in Lok Sabha and state assemblies; implementation depends on delimitation.</p>
+          </div>
+        </details>
+
+        <details class="card" id="oath"><summary><strong>7. Oath & Affirmation (Art. 99)</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Every MP must take an oath or affirmation before they enter Parliament — the form is given in the Third Schedule. The oath is administered by the President or a person authorised by the President.</p>
+          </div>
+        </details>
+
+        <details class="card" id="salaries"><summary><strong>8. Salaries & Allowances (Art. 106)</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Salaries and allowances of MPs are determined by law. Typical components include basic salary, daily allowance (for attending sittings), constituency allowance, travel and medical concessions, accommodation and pension after retirement.</p>
+          </div>
+        </details>
+
+        <details class="card" id="privileges"><summary><strong>9. Parliamentary Privileges (Art. 105)</strong></summary>
+          <div style="padding:10px 6px">
+            <ul>
+              <li><strong>Freedom of Speech</strong> in Parliament; no civil or criminal proceedings for things said or votes cast in Parliament.</li>
+              <li>Immunity from arrest in civil cases during the session and 40 days before/after sessions.</li>
+              <li>Exemption from attendance as jurors and witnesses.</li>
+              <li>Right to publish proceedings (with exceptions for secret sittings).</li>
+            </ul>
+            <p class="small">Breach of privilege can lead to punishment (contempt of Parliament).</p>
+          </div>
+        </details>
+
+        <details class="card" id="officers"><summary><strong>10. Officers of Parliament</strong></summary>
+          <div style="padding:10px 6px">
+            <h4>Lok Sabha</h4>
+            <ul>
+              <li><strong>Speaker</strong> (Art. 93) — elected by Lok Sabha, presides over sittings, maintains discipline, certifies Money Bills, decides on disqualification under the Anti-Defection Law. Removal by resolution of majority (Art. 94).</li>
+              <li><strong>Deputy Speaker</strong> — acts in absence of Speaker.</li>
+            </ul>
+            <h4>Rajya Sabha</h4>
+            <ul>
+              <li><strong>Chairman</strong> — The Vice-President of India is ex-officio Chairman.</li>
+              <li><strong>Deputy Chairman</strong> — elected by Rajya Sabha members.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="card" id="leader-opposition"><summary><strong>11. Leader of Opposition</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Recognised when the largest opposition party has at least 10% of the total seats in the House. The Leader of Opposition gets a status and facilities roughly equivalent to a Cabinet Minister and is a member of certain high-level selection committees.</p>
+          </div>
+        </details>
+
+        <details class="card" id="representation"><summary><strong>12. Representation of States & UTs</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Allocation of seats in Lok Sabha is based on population. States elect their MPs directly. Union Territories with legislatures (like Delhi and Puducherry) also elect MPs; other UTs have direct representation according to law.</p>
+          </div>
+        </details>
+
+        <details class="card" id="sessions"><summary><strong>13. Sessions of Parliament (Art. 85)</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Parliament meets in three main sessions — Budget, Monsoon and Winter. The Constitution mandates that the gap between two sessions shall not exceed six months. Common features:
+            </p>
+            <ul>
+              <li><strong>Question Hour</strong> — first hour where MPs ask questions to Ministers.</li>
+              <li><strong>Zero Hour</strong> — an Indian parliamentary practice (not in Constitution) after Question Hour for raising urgent matters.</li>
+              <li><strong>Lame Duck Session</strong> — last session before dissolution of Lok Sabha; used for pending business.</li>
+              <li><strong>Joint Sitting (Art. 108)</strong> — called by President to resolve deadlocks on ordinary bills; presided over by the Speaker of Lok Sabha.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="card" id="committees"><summary><strong>14. Committees of Parliament</strong></summary>
+          <div style="padding:10px 6px">
+            <p class="small">Committees are essential for detailed scrutiny. Two broad kinds:
+            </p>
+            <ul>
+              <li><strong>Standing Committees</strong> — permanent (e.g., Public Accounts Committee, Estimates Committee, Committee on Petitions).</li>
+              <li><strong>Ad-hoc Committees</strong> — set up for specific tasks and dissolved after completion.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="card" id="types-of-bills"><summary><strong>15. Types of Bills</strong></summary>
+          <div style="padding:10px 6px">
+            <h4>Ordinary Bill (Art. 107)</h4>
+            <p class="small">Any bill that is not a Money Bill or Constitution Amendment. Can be introduced in either House.</p>
+
+            <h4>Money Bill (Art. 110)</h4>
+            <p class="small">Deals with matters like taxation, borrowing, Consolidated Fund and Grants. Can be introduced only in Lok Sabha; Speaker's certificate is final. Rajya Sabha can only recommend amendments (Lok Sabha may accept or reject them).</p>
+
+            <h4>Finance Bill</h4>
+            <p class="small">Introduced along with the Budget; covers taxation and other fiscal measures — may contain provisions that are not strictly Money Bills.</p>
+
+            <h4>Appropriation Bill</h4>
+            <p class="small">Authorizes withdrawal from the Consolidated Fund of India for specific purposes as approved by Parliament.</p>
+
+            <h4>Constitution Amendment Bill (Art. 368)</h4>
+            <p class="small">Needs special majority — a majority of total membership and 2/3rd of members present & voting. Some amendments also require ratification by half the states.</p>
+
+            <h4>Private Member Bill</h4>
+            <p class="small">Introduced by MPs who are not Ministers — rarely passed but useful to highlight issues.</p>
+          </div>
+        </details>
+
+        <details class="card" id="lawmaking"><summary><strong>16. Law-Making Procedure</strong></summary>
+          <div style="padding:10px 6px">
+            <ol>
+              <li><strong>First Reading</strong> — Introduction (title & objectives).</li>
+              <li><strong>Second Reading</strong> — General discussion, referral to committee for clause-by-clause examination, and voting on clauses.</li>
+              <li><strong>Third Reading</strong> — Final debate and vote on the bill as a whole.</li>
+              <li>Sent to the other House to undergo same process.</li>
+              <li><strong>President's assent</strong> — The President may give assent, withhold assent, or return the bill (if not a Money Bill).</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="card" id="amendments"><summary><strong>17. Important Constitutional Amendments related to Parliament</strong></summary>
+          <div style="padding:10px 6px">
+            <ul>
+              <li><strong>42nd (1976)</strong> — Strengthened centre, expanded Parliament's power, curtailed some judicial review.</li>
+              <li><strong>44th (1978)</strong> — Restored powers taken away by 42nd.</li>
+              <li><strong>52nd (1985)</strong> — Added the Anti-Defection Law (10th Schedule).</li>
+              <li><strong>61st (1989)</strong> — Reduced voting age to 18 (for Assembly & Lok Sabha).</li>
+              <li><strong>91st (2003)</strong> — Strengthened anti-defection provisions.</li>
+              <li><strong>104th (2019)</strong> — Abolished Anglo-Indian nomination to Lok Sabha and State Assemblies.</li>
+              <li><strong>105th (2021)</strong> — Gave states power to maintain their OBC lists.</li>
+              <li><strong>106th (2023)</strong> — Provided reservation for women (33%) in Lok Sabha and State Assemblies (pending implementation steps).</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="card" id="special-terms"><summary><strong>18. Special Terms & Extra Concepts</strong></summary>
+          <div style="padding:10px 6px">
+            <ul>
+              <li><strong>Kitchen Cabinet</strong> — An informal group of trusted advisers to the Prime Minister, not part of the formal Cabinet.</li>
+              <li><strong>Shadow Cabinet</strong> — A feature of parliamentary systems like the UK where the opposition keeps a parallel set of spokespeople; not an official Indian practice but sometimes informally used by opposition parties.</li>
+            </ul>
+          </div>
+        </details>
+
+        <section class="card" id="summary">
+          <h2>Summary (Quick Revision)</h2>
+          <p class="small"><strong>Parliament</strong> = President + Lok Sabha + Rajya Sabha. It makes laws, controls finances, holds the government accountable and represents the people. Key features: qualifications, disqualifications, privileges, types of bills, law-making procedure, sessions, committees and important amendments.</p>
+        </section>
+
+        <footer>
+          <p class="small">Tip: Use the search box above (Ctrl/Cmd+F also works) to jump to articles like "Article 110" or terms like "Money Bill". You can download this page for offline revision.</p>
+        </footer>
+
+      </main>
+
+      <aside>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+          <strong>Contents</strong>
+          <button class="copybtn" id="copyAll">Copy summary</button>
+        </div>
+        <ol class="small">
+          <li><a href="#what-is-parliament">What is Parliament?</a></li>
+          <li><a href="#articles">Articles (79–122)</a></li>
+          <li><a href="#composition">Composition of Houses</a></li>
+          <li><a href="#qualifications">Qualifications of MPs</a></li>
+          <li><a href="#disqualifications">Disqualifications</a></li>
+          <li><a href="#reservation">Reservation of Seats</a></li>
+          <li><a href="#oath">Oath & Affirmation</a></li>
+          <li><a href="#salaries">Salaries & Allowances</a></li>
+          <li><a href="#privileges">Parliamentary Privileges</a></li>
+          <li><a href="#officers">Officers of Parliament</a></li>
+          <li><a href="#leader-opposition">Leader of Opposition</a></li>
+          <li><a href="#representation">Representation of States & UTs</a></li>
+          <li><a href="#sessions">Sessions of Parliament</a></li>
+          <li><a href="#committees">Committees</a></li>
+          <li><a href="#types-of-bills">Types of Bills</a></li>
+          <li><a href="#lawmaking">Law-Making Procedure</a></li>
+          <li><a href="#amendments">Important Amendments</a></li>
+          <li><a href="#special-terms">Special Terms</a></li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Basic interactive features: search, expand/collapse, copy summary, download
+    const search = document.getElementById('search');
+    const sections = Array.from(document.querySelectorAll('main > .section, main details.card'));
+
+    function matchSearch(q){
+      q = q.trim().toLowerCase();
+      sections.forEach(s=>{
+        const text = s.innerText.toLowerCase();
+        if(!q) s.style.display = '';
+        else s.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+    search.addEventListener('input', e=> matchSearch(e.target.value));
+
+    document.getElementById('expandAll').addEventListener('click', ()=>{
+      document.querySelectorAll('details.card').forEach(d=>d.open=true);
+    });
+    document.getElementById('collapseAll').addEventListener('click', ()=>{
+      document.querySelectorAll('details.card').forEach(d=>d.open=false);
+    });
+
+    document.getElementById('copyAll').addEventListener('click', async ()=>{
+      const summary = document.getElementById('summary').innerText;
+      try{ await navigator.clipboard.writeText(summary); alert('Summary copied to clipboard'); }
+      catch(e){ alert('Copy failed — use manual select/copy'); }
+    });
+
+    document.getElementById('download').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Parliament_of_India_Study_Guide.html';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Keyboard shortcut: / focuses search
+    window.addEventListener('keydown', (e)=>{ if(e.key === '/') { e.preventDefault(); search.focus(); } });
+  </script>
+</body>
+</html>
